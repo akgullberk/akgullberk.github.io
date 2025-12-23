@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berk Akgül | Yazılım Mühendisi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">BA</div>
+      <nav>
+        <a href="#about">Hakkımda</a>
+        <a href="#skills">Yetenekler</a>
+        <a href="#projects">Projeler</a>
+        <a href="#contact">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Merhaba, ben <span>Berk Akgül</span></h1>
+        <h2>Yazılım Mühendisi · Mobil & Full Stack Developer</h2>
+        <p>Modern, ölçeklenebilir mobil ve web uygulamaları geliştiriyorum; performans, temiz mimari ve güvenliğe önem veriyorum.</p>
+        <div class="hero-badges">
+          <span class="pill">Flutter · Kotlin · React Native</span>
+          <span class="pill secondary">Spring Boot · FastAPI</span>
+        </div>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn primary">Projelerimi Gör</a>
+          <a href="#contact" class="btn secondary">Benimle İletişime Geç</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-visual__glow"></div>
+        <div class="hero-lottie" id="hero-lottie" aria-label="Lottie animasyonu"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h3>Hakkımda</h3>
+        <p>Kullanıcı deneyimi yüksek, bakımı kolay ürünler geliştirmeyi seviyorum.</p>
+      </div>
+      <div class="text-grid">
+        <div class="project-card">
+          <h4>Profil</h4>
+          <p>Fırat Üniversitesi Yazılım Mühendisliği 4. sınıf öğrencisiyim. Mobilde Flutter/Kotlin, backend tarafında Spring Boot ve FastAPI ile üretkenim.</p>
+        </div>
+        <div class="project-card">
+          <h4>Odak Noktaları</h4>
+          <p>Temiz mimari, test edilebilirlik, otomasyon, izleme ve performans iyileştirme. Tasarım sistemleri ve yeniden kullanılabilir bileşenler oluşturuyorum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section dark">
+    <div class="container">
+      <div class="section-header">
+        <h3>Yetenekler</h3>
+        <p>Uçtan uca ürün geliştirmek için kullandığım teknoloji ve araçlar.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h4>Mobil</h4>
+          <p>Flutter, React Native, Kotlin</p>
+        </div>
+        <div class="skill-card">
+          <h4>Frontend</h4>
+          <p>React, Angular</p>
+        </div>
+        <div class="skill-card">
+          <h4>Backend</h4>
+          <p>Spring Boot, FastAPI, Node.js</p>
+        </div>
+        <div class="skill-card">
+          <h4>Veritabanı</h4>
+          <p>Firebase, PostgreSQL, MongoDB, MSSQL</p>
+        </div>
+        <div class="skill-card">
+          <h4>Araçlar</h4>
+          <p>Git, GitHub, CI/CD, Docker, Postman</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h3>Projeler</h3>
+        <p>Teknolojiye göre ayrılmış projelerimi inceleyebilirsiniz.</p>
+      </div>
+      <div class="projects-grid">
+        <a href="mobile.html" class="project-category">
+          <h4>📱 Mobil Projeler</h4>
+          <p>Flutter, React Native, Kotlin</p>
+        </a>
+        <a href="backend.html" class="project-category">
+          <h4>🧠 Backend Projeler</h4>
+          <p>Spring Boot, FastAPI, Node.js</p>
+        </a>
+        <a href="frontend.html" class="project-category">
+          <h4>🌐 Frontend Projeler</h4>
+          <p>React, Angular</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="section dark">
+    <div class="container">
+      <div class="section-header">
+        <h3>İletişim</h3>
+        <p>Projeler, iş birlikleri veya hızlı bir tanışma için yazabilirsiniz.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:berk@example.com">📧 E-posta</a>
+        <a href="https://github.com/akgullberk" target="_blank">🐙 GitHub</a>
+        <a href="#" target="_blank">💼 LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Berk Akgül. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <!-- Lottie: unpkg (SRI kaldırıldı; CDNJS hash uyuşmazlığı hata veriyordu) -->
+  <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    const heroLottie = document.getElementById('hero-lottie');
+    if (heroLottie && window.lottie) {
+      window.lottie.loadAnimation({
+        container: heroLottie,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'gdsc-modules.json',
+        rendererSettings: { preserveAspectRatio: 'xMidYMid meet', progressiveLoad: true }
+      });
+    }
+  </script>
+
+</body>
+
+</html>
