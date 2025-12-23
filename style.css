@@ -124,13 +124,13 @@ a {
 .hero-lottie {
   position: relative;
   z-index: 1;
-  width: min(380px, 100%);
+  width: min(2000px, 100%);
   aspect-ratio: 1;
-  background: linear-gradient(160deg, rgba(56, 189, 248, 0.08), rgba(129, 140, 248, 0.06));
-  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: transparent;
+  border: none;
+  box-shadow: none;
   border-radius: 18px;
-  box-shadow: var(--glow);
-  padding: 0.75rem;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
