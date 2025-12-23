@@ -8,21 +8,11 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body data-page="home">
   <div id="particles-js"></div>
 
   <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="container nav-inner">
-      <div class="logo">BA</div>
-      <nav>
-        <a href="#about">Hakkımda</a>
-        <a href="#skills">Yetenekler</a>
-        <a href="#projects">Projeler</a>
-        <a href="#contact">İletişim</a>
-      </nav>
-    </div>
-  </header>
+  <header class="navbar"></header>
 
   <!-- HERO -->
   <section class="hero">
@@ -131,20 +121,20 @@
         <h3>İletişim</h3>
         <p>Projeler, iş birlikleri veya hızlı bir tanışma için yazabilirsiniz.</p>
       </div>
-      <div class="contact-links">
-        <a href="https://github.com/akgullberk" target="_blank"><span class="icon-box"><img src="github.png" alt="GitHub"></span>GitHub</a>
-        <a href="#" target="_blank"><span class="icon-box"><img src="linkedin.png" alt="LinkedIn"></span>LinkedIn</a>
-        <a href="#" target="_blank"><span class="icon-box"><img src="medium.png" alt="Medium"></span>Medium</a>
-      </div>
+      <div class="contact-links" data-variant="main"></div>
+      
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer></footer>
 
-  <!-- Lottie: unpkg (SRI kaldırıldı; CDNJS hash uyuşmazlığı hata veriyordu) -->
+  <!-- Ortak scriptler -->
   <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="particles-init.js"></script>
+  <script src="navbar.js"></script>
+  <script src="social-links.js"></script>
   <script>
     const heroLottie = document.getElementById('hero-lottie');
     if (heroLottie && window.lottie) {
@@ -157,25 +147,6 @@
         rendererSettings: { preserveAspectRatio: 'xMidYMid meet', progressiveLoad: true }
       });
     }
-    /* particles.js: yumuşak, yavaş ve hafif mouse tepkili */
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 60, density: { enable: true, value_area: 800 } },
-        color: { value: '#60a5fa' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.4, random: true },
-        size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 140, color: '#60a5fa', opacity: 0.25, width: 1 },
-        move: { enable: true, speed: 0.6, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: false }, resize: true },
-        modes: { repulse: { distance: 80, duration: 0.3 } }
-      },
-      retina_detect: true
-    });
-
     /* Aktif navbar linki: scroll konumuna göre vurgu */
     const sections = ['about', 'skills', 'projects', 'contact'];
     const navLinks = Array.from(document.querySelectorAll('.navbar nav a'));

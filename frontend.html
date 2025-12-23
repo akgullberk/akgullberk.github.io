@@ -6,17 +6,10 @@
   <title>Frontend Projeler | Berk Akgül</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-page="frontend">
   <div id="particles-js"></div>
 
-  <header class="navbar">
-    <div class="container nav-inner">
-      <div class="logo">BA</div>
-      <nav>
-        <a href="index.html">Ana Sayfa</a>
-      </nav>
-    </div>
-  </header>
+  <header class="navbar"></header>
 
   <section class="section" style="padding-top:8rem">
     <div class="container">
@@ -24,60 +17,13 @@
         <h3>🌐 Frontend Projeler</h3>
         <p>Modern arayüzler, tasarım sistemleri ve veri görselleştirme çalışmaları.</p>
       </div>
-      <div class="accordion">
-        <details open class="accordion-item">
-          <summary><span>React</span><span class="accordion-icon">▲</span></summary>
-          <div class="project-list">
-            <div class="projects-grid">
-              <div class="project-card">
-                <h4>Portfolio Website</h4>
-                <p>React, Tailwind CSS</p>
-                <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
-              </div>
-              <div class="project-card">
-                <h4>Dashboard</h4>
-                <p>React, Chart.js</p>
-                <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
-              </div>
-            </div>
-          </div>
-        </details>
-
-        <details open class="accordion-item">
-          <summary><span>Angular</span><span class="accordion-icon">▲</span></summary>
-          <div class="project-list">
-            <div class="projects-grid">
-              <div class="project-card">
-                <h4>CRM Paneli</h4>
-                <p>Angular, RxJS</p>
-                <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
-              </div>
-            </div>
-          </div>
-        </details>
-      </div>
+      <div class="accordion" data-projects></div>
     </div>
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script>
-    particlesJS('particles-js', {
-      particles: {
-        number: { value: 60, density: { enable: true, value_area: 800 } },
-        color: { value: '#60a5fa' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.4, random: true },
-        size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 140, color: '#60a5fa', opacity: 0.25, width: 1 },
-        move: { enable: true, speed: 0.6, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
-      },
-      interactivity: {
-        detect_on: 'canvas',
-        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: false }, resize: true },
-        modes: { repulse: { distance: 80, duration: 0.3 } }
-      },
-      retina_detect: true
-    });
-  </script>
+  <script src="particles-init.js"></script>
+  <script src="navbar.js"></script>
+  <script src="projects-accordion.js"></script>
 </body>
 </html>
