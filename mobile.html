@@ -7,74 +7,95 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="particles-js"></div>
 
-<header class="navbar">
-  <div class="container nav-inner">
-    <div class="logo">BA</div>
-    <nav>
-      <a href="index.html">Ana Sayfa</a>
-    </nav>
-  </div>
-</header>
-
-<section class="section" style="padding-top:8rem">
-  <div class="container">
-    <div class="section-header">
-      <h3>📱 Mobil Projeler</h3>
-      <p>Flutter, Kotlin ve React Native ile geliştirdiğim uygulamalar.</p>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">BA</div>
+      <nav>
+        <a href="index.html">Ana Sayfa</a>
+      </nav>
     </div>
-    <div class="accordion">
-      <details open class="accordion-item">
-        <summary><span>🦋 Flutter</span><span class="accordion-icon">▲</span></summary>
-        <div class="project-list">
-          <div class="projects-grid">
-            <div class="project-card tech-card">
-              <h4>Film Uygulaması</h4>
-              <p>Flutter, Firebase, TMDB API</p>
-              <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
-            </div>
-            <div class="project-card tech-card">
-              <h4>Spotify Klonu</h4>
-              <p>Flutter, Clean Architecture</p>
-              <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
-            </div>
-          </div>
-        </div>
-      </details>
+  </header>
 
-      <details open class="accordion-item">
-        <summary><span>🤖 Kotlin</span><span class="accordion-icon">▲</span></summary>
-        <div class="project-list">
-          <div class="projects-grid">
-            <div class="project-card tech-card">
-              <h4>Not Uygulaması</h4>
-              <p>Kotlin, Room, MVVM</p>
-              <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
-            </div>
-            <div class="project-card tech-card">
-              <h4>Weather App</h4>
-              <p>Kotlin, REST API</p>
-              <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
+  <section class="section" style="padding-top:8rem">
+    <div class="container">
+      <div class="section-header">
+        <h3>📱 Mobil Projeler</h3>
+        <p>Flutter, Kotlin ve React Native ile geliştirdiğim uygulamalar.</p>
+      </div>
+      <div class="accordion">
+        <details open class="accordion-item">
+          <summary><span>🦋 Flutter</span><span class="accordion-icon">▲</span></summary>
+          <div class="project-list">
+            <div class="projects-grid">
+                <div class="project-card tech-card">
+                  <h4>Film Uygulaması</h4>
+                  <p>Flutter, Firebase, TMDB API</p>
+                  <a href="film.html">Detay →</a>
+                </div>
+              <div class="project-card tech-card">
+                <h4>Spotify Klonu</h4>
+                <p>Flutter, Clean Architecture</p>
+                <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
+              </div>
             </div>
           </div>
-        </div>
-      </details>
+        </details>
 
-      <details open class="accordion-item">
-        <summary><span>⚛️ React Native</span><span class="accordion-icon">▲</span></summary>
-        <div class="project-list">
-          <div class="projects-grid">
-            <div class="project-card tech-card">
-              <h4>Alışveriş Asistanı</h4>
-              <p>React Native, Zustand, REST API</p>
-              <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
+        <details open class="accordion-item">
+          <summary><span>🤖 Kotlin</span><span class="accordion-icon">▲</span></summary>
+          <div class="project-list">
+            <div class="projects-grid">
+              <div class="project-card tech-card">
+                <h4>Not Uygulaması</h4>
+                <p>Kotlin, Room, MVVM</p>
+                <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
+              </div>
+              <div class="project-card tech-card">
+                <h4>Weather App</h4>
+                <p>Kotlin, REST API</p>
+                <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
+              </div>
             </div>
           </div>
-        </div>
-      </details>
+        </details>
+
+        <details open class="accordion-item">
+          <summary><span>⚛️ React Native</span><span class="accordion-icon">▲</span></summary>
+          <div class="project-list">
+            <div class="projects-grid">
+              <div class="project-card tech-card">
+                <h4>Alışveriş Asistanı</h4>
+                <p>React Native, Zustand, REST API</p>
+                <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 60, density: { enable: true, value_area: 800 } },
+        color: { value: '#60a5fa' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.4, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 140, color: '#60a5fa', opacity: 0.25, width: 1 },
+        move: { enable: true, speed: 0.6, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: false }, resize: true },
+        modes: { repulse: { distance: 80, duration: 0.3 } }
+      },
+      retina_detect: true
+    });
+  </script>
 </body>
 </html>

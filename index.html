@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <div id="particles-js"></div>
 
   <!-- NAVBAR -->
   <header class="navbar">
@@ -131,20 +132,19 @@
         <p>Projeler, iş birlikleri veya hızlı bir tanışma için yazabilirsiniz.</p>
       </div>
       <div class="contact-links">
-        <a href="mailto:berk@example.com">📧 E-posta</a>
-        <a href="https://github.com/akgullberk" target="_blank">🐙 GitHub</a>
-        <a href="#" target="_blank">💼 LinkedIn</a>
+        <a href="https://github.com/akgullberk" target="_blank"><span class="icon-box"><img src="github.png" alt="GitHub"></span>GitHub</a>
+        <a href="#" target="_blank"><span class="icon-box"><img src="linkedin.png" alt="LinkedIn"></span>LinkedIn</a>
+        <a href="#" target="_blank"><span class="icon-box"><img src="medium.png" alt="Medium"></span>Medium</a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Berk Akgül. Tüm hakları saklıdır.</p>
-  </footer>
+  <footer></footer>
 
   <!-- Lottie: unpkg (SRI kaldırıldı; CDNJS hash uyuşmazlığı hata veriyordu) -->
   <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script>
     const heroLottie = document.getElementById('hero-lottie');
     if (heroLottie && window.lottie) {
@@ -157,6 +157,40 @@
         rendererSettings: { preserveAspectRatio: 'xMidYMid meet', progressiveLoad: true }
       });
     }
+    /* particles.js: yumuşak, yavaş ve hafif mouse tepkili */
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 60, density: { enable: true, value_area: 800 } },
+        color: { value: '#60a5fa' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.4, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 140, color: '#60a5fa', opacity: 0.25, width: 1 },
+        move: { enable: true, speed: 0.6, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: false }, resize: true },
+        modes: { repulse: { distance: 80, duration: 0.3 } }
+      },
+      retina_detect: true
+    });
+
+    /* Aktif navbar linki: scroll konumuna göre vurgu */
+    const sections = ['about', 'skills', 'projects', 'contact'];
+    const navLinks = Array.from(document.querySelectorAll('.navbar nav a'));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
+
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
   </script>
 
 </body>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Film Uygulaması | Berk Akgül</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">BA</div>
+      <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="mobile.html">Mobil</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section" style="padding-top:8rem">
+    <div class="container">
+      <div class="detail-hero">
+        <div>
+          <h1>Film Uygulaması</h1>
+          <p>Kullanıcıların film/dizi keşfetmesini, aramasını ve favori listeleri tutmasını sağlayan Flutter tabanlı uygulama.</p>
+          <div class="detail-tags">
+            <span class="detail-tag">Flutter</span>
+            <span class="detail-tag">Firebase Auth</span>
+            <span class="detail-tag">Firestore</span>
+            <span class="detail-tag">TMDB API</span>
+            <span class="detail-tag">Offline Cache</span>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin-bottom:0.5rem;">Kısa Özet</h3>
+          <p>TMDB API ile içerik çeker, arama/filtreleme yapar, favorileri bulutta senkronize eder; çevrimdışı mod için yerel önbellek kullanır.</p>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3>Projenin Amacı</h3>
+        <p>Hızlı, akıcı ve offline-first bir medya keşif deneyimi sunmak; kullanıcı oturumu ve favorileri güvenli şekilde saklamak; görsel ağırlıklı veriyi performanslı yönetmek.</p>
+      </div>
+
+      <div class="detail-section">
+        <h3>Kullanılan Teknolojiler</h3>
+        <div class="detail-tags">
+          <span class="detail-tag">Flutter</span>
+          <span class="detail-tag">Dio</span>
+          <span class="detail-tag">Riverpod</span>
+          <span class="detail-tag">Firebase Auth</span>
+          <span class="detail-tag">Firestore</span>
+          <span class="detail-tag">SQFlite</span>
+          <span class="detail-tag">TMDB API</span>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3>Mimari & Yapı</h3>
+        <ul class="detail-list">
+          <li>Clean Architecture + Repository pattern</li>
+          <li>Dio tabanlı servis katmanı, hata/boş durum yönetimi</li>
+          <li>Riverpod ile state yönetimi ve caching stratejileri</li>
+          <li>SQFlite ile offline okuma; Firestore ile senkron favoriler</li>
+        </ul>
+      </div>
+
+      <div class="detail-section">
+        <h3>Görseller / Ekran Görüntüleri</h3>
+        <div class="detail-gallery">
+          <div class="detail-frame"></div>
+          <div class="detail-frame"></div>
+        </div>
+      </div>
+
+      <div class="detail-section">
+        <h3>Linkler</h3>
+        <div class="detail-links">
+          <a href="https://github.com/akgullberk" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 60, density: { enable: true, value_area: 800 } },
+        color: { value: '#60a5fa' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.4, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 140, color: '#60a5fa', opacity: 0.25, width: 1 },
+        move: { enable: true, speed: 0.6, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: false }, resize: true },
+        modes: { repulse: { distance: 80, duration: 0.3 } }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>
+

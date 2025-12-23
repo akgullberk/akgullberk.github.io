@@ -7,74 +7,95 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="particles-js"></div>
 
-<header class="navbar">
-  <div class="container nav-inner">
-    <div class="logo">BA</div>
-    <nav>
-      <a href="index.html">Ana Sayfa</a>
-    </nav>
-  </div>
-</header>
-
-<section class="section" style="padding-top:8rem">
-  <div class="container">
-    <div class="section-header">
-      <h3>🧠 Backend Projeler</h3>
-      <p>Ölçeklenebilir servisler, mesajlaşma ve API geliştirme çalışmaları.</p>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">BA</div>
+      <nav>
+        <a href="index.html">Ana Sayfa</a>
+      </nav>
     </div>
-    <div class="accordion">
-      <details open class="accordion-item">
-        <summary><span>Spring Boot</span><span class="accordion-icon">▲</span></summary>
-        <div class="project-list">
-          <div class="projects-grid">
-            <div class="project-card">
-              <h4>REST API</h4>
-              <p>Spring Boot, PostgreSQL</p>
-              <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
-            </div>
-            <div class="project-card">
-              <h4>Raporlama Servisi</h4>
-              <p>Spring Boot, JPA, Docker</p>
-              <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
-            </div>
-          </div>
-        </div>
-      </details>
+  </header>
 
-      <details open class="accordion-item">
-        <summary><span>Node.js</span><span class="accordion-icon">▲</span></summary>
-        <div class="project-list">
-          <div class="projects-grid">
-            <div class="project-card">
-              <h4>Bildirim Sistemi</h4>
-              <p>Node.js, Firebase Cloud Messaging</p>
-              <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
-            </div>
-            <div class="project-card">
-              <h4>Gerçek Zamanlı Sohbet</h4>
-              <p>Node.js, WebSocket</p>
-              <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
+  <section class="section" style="padding-top:8rem">
+    <div class="container">
+      <div class="section-header">
+        <h3>🧠 Backend Projeler</h3>
+        <p>Ölçeklenebilir servisler, mesajlaşma ve API geliştirme çalışmaları.</p>
+      </div>
+      <div class="accordion">
+        <details open class="accordion-item">
+          <summary><span>Spring Boot</span><span class="accordion-icon">▲</span></summary>
+          <div class="project-list">
+            <div class="projects-grid">
+              <div class="project-card">
+                <h4>REST API</h4>
+                <p>Spring Boot, PostgreSQL</p>
+                <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
+              </div>
+              <div class="project-card">
+                <h4>Raporlama Servisi</h4>
+                <p>Spring Boot, JPA, Docker</p>
+                <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
+              </div>
             </div>
           </div>
-        </div>
-      </details>
+        </details>
 
-      <details open class="accordion-item">
-        <summary><span>FastAPI</span><span class="accordion-icon">▲</span></summary>
-        <div class="project-list">
-          <div class="projects-grid">
-            <div class="project-card">
-              <h4>ML Servis Katmanı</h4>
-              <p>FastAPI, Docker, Celery</p>
-              <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
+        <details open class="accordion-item">
+          <summary><span>Node.js</span><span class="accordion-icon">▲</span></summary>
+          <div class="project-list">
+            <div class="projects-grid">
+              <div class="project-card">
+                <h4>Bildirim Sistemi</h4>
+                <p>Node.js, Firebase Cloud Messaging</p>
+                <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
+              </div>
+              <div class="project-card">
+                <h4>Gerçek Zamanlı Sohbet</h4>
+                <p>Node.js, WebSocket</p>
+                <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
+              </div>
             </div>
           </div>
-        </div>
-      </details>
+        </details>
+
+        <details open class="accordion-item">
+          <summary><span>FastAPI</span><span class="accordion-icon">▲</span></summary>
+          <div class="project-list">
+            <div class="projects-grid">
+              <div class="project-card">
+                <h4>ML Servis Katmanı</h4>
+                <p>FastAPI, Docker, Celery</p>
+                <a href="https://github.com/akgullberk" target="_blank">GitHub →</a>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 60, density: { enable: true, value_area: 800 } },
+        color: { value: '#60a5fa' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.4, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 140, color: '#60a5fa', opacity: 0.25, width: 1 },
+        move: { enable: true, speed: 0.6, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: false }, resize: true },
+        modes: { repulse: { distance: 80, duration: 0.3 } }
+      },
+      retina_detect: true
+    });
+  </script>
 </body>
 </html>
