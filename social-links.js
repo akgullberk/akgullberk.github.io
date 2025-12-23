@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
       alt: 'GitHub'
     },
     {
-      href: '#',
+      href: 'https://www.linkedin.com/in/akgullberk/',
       label: 'LinkedIn',
       icon: 'linkedin.png',
       alt: 'LinkedIn'
     },
     {
-      href: '#',
+      href: 'https://medium.com/@akgullberk',
       label: 'Medium',
       icon: 'medium.png',
       alt: 'Medium'

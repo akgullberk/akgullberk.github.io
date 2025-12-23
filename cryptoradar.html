@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CryptoRadar | Berk Akgül</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="detail-page" data-page="cryptoradar">
+  <div id="particles-js"></div>
+
+  <header class="navbar"></header>
+
+  <main class="section" style="padding-top:8rem">
+    <div class="container detail-wrap">
+      <div class="detail-hero">
+        <p class="detail-kicker">Proje Detayı</p>
+        <h1>CryptoRadar: Clean Architecture ile Modern Android Kripto Para Takip Uygulaması</h1>
+        <p class="detail-sub">Kotlin · Jetpack Compose · Clean Architecture · MVVM · Coroutines & Flow · Ktor · Koin · Material Design 3 · Kotlin Serialization</p>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://github.com/akgullberk/Jetpack-Compose-CryptoRadar-CleanArchitecture" target="_blank"><span class="icon-box"><img src="github.png" alt="GitHub"></span>GitHub</a>
+      </div>
+      
+
+      <section class="detail-block">
+        <div class="detail-title">Kısa Özet</div>
+        <div class="detail-body">
+          Bu projede, Clean Architecture prensiplerini kullanarak Android için bir kripto para takip uygulaması geliştirdim. Coincap API'den gerçek zamanlı veri çekerek kullanıcılara kripto para fiyatlarını, piyasa değerlerini ve geçmiş fiyat grafiklerini sunuyorum. Uygulama, Material Design 3 Adaptive Navigation kullanarak hem telefon hem tablet için optimize edilmiş bir kullanıcı deneyimi sunuyor.</div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Projenin Amacı</div>
+        <div class="detail-body">
+          Bu çalışmayı gerçekleştirirken temel hedefim, Clean Architecture'ın Android geliştirmede nasıl uygulanacağını ve katmanlar arası bağımlılıkların nasıl minimize edileceğini göstermekti.
+          <br><br>
+          Genellikle Android projelerinde UI ve business logic iç içe geçer, bu da test edilebilirliği ve bakımı zorlaştırır. Ben bu projede Domain katmanını tamamen bağımsız hale getirerek, Data katmanını (API implementasyonu) ve Presentation katmanını (UI) birbirinden izole ettim. Böylece API değiştiğinde sadece Data katmanını, UI değiştiğinde sadece Presentation katmanını güncellemek yeterli oldu. Ayrıca Result pattern ile tip-güvenli hata yönetimi, safeCall wrapper'ı ile merkezi exception handling ve özel Canvas tabanlı LineChart bileşeni ile interaktif grafik görselleştirme gibi modern Android geliştirme tekniklerini uyguladım.
+          </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Mimari & Yapı</div>
+        <div class="detail-body">
+          Uygulama Clean Architecture prensiplerine uygun olarak Data, Domain ve Presentation katmanlarına ayrıldı.
+          <br><br>
+          Domain: Business logic ve domain modelleri (Coin, CoinPrice) ile CoinDataSource interface'i. Bu katman hiçbir Android bağımlılığı içermez ve tamamen platform bağımsızdır.
+          <br><br>
+          Data: API implementasyonları (RemoteCoinDataSource), DTO'lar (CoinDto, CoinHistoryDto), mapper fonksiyonları ve HTTP client konfigürasyonu. Ktor ile network katmanı, Kotlin Serialization ile JSON parsing ve Result pattern ile tip-güvenli hata yönetimi burada gerçekleşir.
+          <br><br>
+          Presentation: Jetpack Compose UI bileşenleri, ViewModel (StateFlow ile reactive state management), Material Design 3 Adaptive Navigation ve özel Canvas tabanlı LineChart bileşeni. Koin ile dependency injection kullanarak ViewModel'leri ve data source'ları yönetiyorum.
+          <br><br>
+          Ek olarak, core modülünde tüm feature'ların kullanabileceği ortak utility'ler (Result pattern, NetworkError handling, safeCall wrapper) ve navigation yapısı bulunuyor. Bu sayede kod tekrarı önleniyor ve proje genişletilebilir bir yapıya sahip oluyor.</div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Görseller / Ekran Görüntüleri</div>
+        <div class="detail-gallery">
+          <div class="gallery-image">
+            <img src="anasayfa.png" alt="Ana Sayfa">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Ana Sayfa</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="coindetay.png" alt="Coin Detay">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Coin Detay</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <span class="lightbox-close">&times;</span>
+      <img id="lightbox-img" src="" alt="">
+      <div class="lightbox-title" id="lightbox-title"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="particles-init.js"></script>
+  <script src="navbar.js"></script>
+  <script>
+    // Lightbox functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryImages = document.querySelectorAll('.gallery-image');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxTitle = document.getElementById('lightbox-title');
+      const lightboxClose = document.querySelector('.lightbox-close');
+
+      galleryImages.forEach(function(imageContainer) {
+        imageContainer.addEventListener('click', function() {
+          const img = this.querySelector('img');
+          const title = this.querySelector('.gallery-image-title');
+          
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightboxTitle.textContent = title ? title.textContent : img.alt;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Close lightbox
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      lightboxClose.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+          closeLightbox();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+

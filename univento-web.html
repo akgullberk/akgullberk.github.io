@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UniVento | Berk Akgül</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="detail-page" data-page="univento-web">
+  <div id="particles-js"></div>
+
+  <header class="navbar"></header>
+
+  <main class="section" style="padding-top:8rem">
+    <div class="container detail-wrap">
+      <div class="detail-hero">
+        <p class="detail-kicker">Proje Detayı</p>
+        <h1>UniVento: Üniversite Etkinlik ve Kulüp Yönetim Platformu</h1>
+        <p class="detail-sub">React · JavaScript · Firebase Authentication · RESTful API · React Router · CSS · Component-Based Architecture</p>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://github.com/akgullberk/univentoweb" target="_blank"><span class="icon-box"><img src="github.png" alt="GitHub"></span>GitHub</a>
+      </div>
+      
+
+      <section class="detail-block">
+        <div class="detail-title">Kısa Özet</div>
+        <div class="detail-body">
+          UniVento, üniversite kulüpleri ve etkinlik yönetimini dijitalleştiren bir web platformu. Öğrenciler ve kulüp başkanları için kullanıcı dostu bir sistem geliştirdim. Firebase Authentication ile güvenli kimlik doğrulama, RESTful API entegrasyonu ile backend iletişimi ve component-based yapı ile modüler kod organizasyonu uyguladım. Proje, farklı kullanıcı rolleri (öğrenci/başkan) için özelleştirilmiş yetkilendirme ve iş akışları içeriyor.</div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Projenin Amacı</div>
+        <div class="detail-body">
+          Temel hedef, üniversite kampüslerindeki kulüp ve etkinlik yönetim süreçlerini dijitalleştirmekti. Öğrenciler tüm etkinlikleri tek platformdan görüntüleyebilmeli, kulüplere üye olabilmeli ve etkinliklere katılabilmeliydi. Kulüp başkanları ise etkinlik oluşturma, üyelik başvurularını yönetme ve katılım isteklerini onaylama gibi yönetim işlemlerini gerçekleştirebilmeliydi.
+          <br><br>
+          Projede, React'in component-based mimarisini kullanarak her sayfayı bağımsız bir modül haline getirdim. Firebase Authentication ile kullanıcı kimlik doğrulamasını backend'den bağımsız yönetirken, RESTful API ile dinamik veri akışı sağladım. LocalStorage kullanarak hafif state yönetimi uyguladım; bu sayede küçük ve orta ölçekli bir uygulama için gereksiz state management kütüphanelerinden kaçınarak performansı korudum.
+          </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Mimari & Yapı</div>
+        <div class="detail-body">
+          Uygulama, component-based mimari ile organize edildi ve üç ana katmana ayrıldı:
+          <br><br>
+          Presentation (Sunum) Katmanı: React component'leri ve sayfa yapıları Her sayfa (pages/) kendi state yönetimi ve lifecycle hook'ları ile bağımsız çalışır
+          Ortak component'ler (components/) farklı sayfalarda yeniden kullanılır
+          React Router DOM ile client-side routing sağlanır
+          <br><br>
+          Authentication (Kimlik Doğrulama) Katmanı: Firebase Authentication entegrasyonu
+Firebase Auth ile kullanıcı kaydı, giriş ve oturum yönetimi
+Role-based access control (kulüp başkanı/öğrenci ayrımı)
+Auth state değişikliklerini dinleyen reactive yapı
+          <br><br>
+          Data (Veri) Katmanı: RESTful API entegrasyonu
+          Fetch API ile backend iletişimi
+          CRUD işlemleri (etkinlik oluşturma, listeleme, silme, katılım)
+          FormData ile çoklu form verisi ve dosya yükleme desteği
+        </div>
+      </section>
+
+      <!--
+      <section class="detail-block">
+        <div class="detail-title">Görseller / Ekran Görüntüleri</div>
+        <div class="detail-gallery">
+          <div class="gallery-chip">Ana Sayfa</div>
+          <div class="gallery-chip">Projeler Sayfası</div>
+          <div class="gallery-chip">İletişim Formu</div>
+        </div>
+      </section>
+      -->
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="particles-init.js"></script>
+  <script src="navbar.js"></script>
+</body>
+</html>
+

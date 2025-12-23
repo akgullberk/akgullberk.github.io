@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jetpack Compose Task Manager | Berk Akgül</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="detail-page" data-page="task-manager">
+  <div id="particles-js"></div>
+
+  <header class="navbar"></header>
+
+  <main class="section" style="padding-top:8rem">
+    <div class="container detail-wrap">
+      <div class="detail-hero">
+        <p class="detail-kicker">Proje Detayı</p>
+        <h1>Jetpack Compose Task Manager: MVVM Mimarisi ve Firebase Entegrasyonu</h1>
+        <p class="detail-sub">Kotlin · Jetpack Compose · MVVM Architecture · Firebase Firestore · Dagger Hilt · Navigation Component · LiveData · Material Design 3</p>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://github.com/akgullberk/Jetpack-Compose-Task-Manager-MVVM" target="_blank"><span class="icon-box"><img src="github.png" alt="GitHub"></span>GitHub</a>
+      </div>
+      
+
+      <section class="detail-block">
+        <div class="detail-title">Kısa Özet</div>
+        <div class="detail-body">
+          Bu projede, Android geliştirmede MVVM (Model-View-ViewModel) mimarisini ve Jetpack Compose ile modern UI geliştirmeyi uyguladım. Firebase Firestore ile gerçek zamanlı veri senkronizasyonu sağlayan bir görev yönetim uygulaması geliştirdim. Dependency Injection için Dagger Hilt kullanarak modüler ve test edilebilir bir yapı kurdum.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Projenin Amacı</div>
+        <div class="detail-body">
+          Bu çalışmada, Android'de katmanlı mimariyi ve modern UI yaklaşımını birleştirmeyi hedefledim. UI ile iş mantığını ayırarak, veri kaynağı değiştiğinde UI katmanını etkilemeden güncelleme yapılabileceğini gösterdim.
+          <br><br>
+          Firebase Firestore'un gerçek zamanlı güncellemelerini LiveData ile UI'a aktırarak reaktif bir akış oluşturdum. Dagger Hilt ile bağımlılıkları merkezi yöneterek, Repository ve DataSource katmanlarını kolayca test edilebilir ve değiştirilebilir hale getirdim. Material Design 3 ile modern ve kullanıcı dostu bir arayüz tasarladım.
+          </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Mimari & Yapı</div>
+        <div class="detail-body">
+          Uygulama MVVM prensiplerine uygun olarak Data, Presentation ve Dependency Injection katmanlarına ayrıldı.
+          <br><br>
+          Data Katmanı: Firebase Firestore ile veri işlemlerini yöneten GorevlerDataSource ve iş mantığını soyutlayan GorevlerRepository sınıflarından oluşur. Veri modeli Gorevler entity sınıfı ile temsil edilir.
+          <br><br>
+          Presentation Katmanı: Jetpack Compose ile oluşturulmuş UI bileşenleri (Anasayfa, GorevEkleme, GorevGuncelleme) ve bu bileşenlerin durumunu yöneten ViewModel sınıfları (AnasayfaViewModel, GorevEklemeViewModel) yer alır. LiveData ile veri akışı sağlanır ve Navigation Component ile sayfa geçişleri yönetilir.
+          <br><br>
+          Dependency Injection: Dagger Hilt ile AppModule içinde Repository ve DataSource bağımlılıkları tanımlanır. Bu sayede test edilebilirlik ve modülerlik artar.
+          <br><br>
+          Uygulama, görev ekleme, silme, arama ve tamamlanma durumu işaretleme gibi temel CRUD işlemlerini destekler. Tarih formatlaması ile kullanıcı deneyimi iyileştirilir (Bugün, Yarın, Dün gösterimi). Firebase Firestore'un snapshot listener'ları sayesinde veriler gerçek zamanlı olarak senkronize edilir.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Görseller / Ekran Görüntüleri</div>
+        <div class="detail-gallery">
+          <div class="gallery-image">
+            <img src="görevler.png" alt="Görevler">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Görevler</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="görevekle.png" alt="Görev Ekleme">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Görev Ekleme</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <span class="lightbox-close">&times;</span>
+      <img id="lightbox-img" src="" alt="">
+      <div class="lightbox-title" id="lightbox-title"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="particles-init.js"></script>
+  <script src="navbar.js"></script>
+  <script>
+    // Lightbox functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryImages = document.querySelectorAll('.gallery-image');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxTitle = document.getElementById('lightbox-title');
+      const lightboxClose = document.querySelector('.lightbox-close');
+
+      galleryImages.forEach(function(imageContainer) {
+        imageContainer.addEventListener('click', function() {
+          const img = this.querySelector('img');
+          const title = this.querySelector('.gallery-image-title');
+          
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightboxTitle.textContent = title ? title.textContent : img.alt;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Close lightbox
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      lightboxClose.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+          closeLightbox();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+

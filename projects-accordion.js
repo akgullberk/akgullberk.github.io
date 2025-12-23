@@ -12,35 +12,35 @@ document.addEventListener('DOMContentLoaded', () => {
           {
             name: 'Flutter Todo App: Clean Architecture ve Çoklu State Management Yapısı',
             tech: 'Flutter, Clean Architecture, State Management',
-            href: 'film.html',
+            href: 'flutter-todo-app.html',
             external: false,
             label: 'Detay →'
           },
-          {
-            name: 'Spotify Klonu',
-            tech: 'Flutter, Clean Architecture',
-            href: 'https://github.com/akgullberk',
-            external: true,
-            label: 'GitHub →'
-          }
         ]
       },
       {
         title: '🤖 Kotlin',
         projects: [
           {
-            name: 'Not Uygulaması',
-            tech: 'Kotlin, Room, MVVM',
-            href: 'https://github.com/akgullberk',
-            external: true,
-            label: 'GitHub →'
+            name: 'USG Challenge Mobil Uygulama: Clean Architecture ile Türkiye Şehir Rehberi',
+            tech: 'Kotlin, Jetpack Compose, Clean Architecture',
+            href: 'usg-challenge.html',
+            external: false,
+            label: 'Detay →'
           },
           {
-            name: 'Weather App',
-            tech: 'Kotlin, REST API',
-            href: 'https://github.com/akgullberk',
-            external: true,
-            label: 'GitHub →'
+            name: 'CryptoRadar: Clean Architecture ile Modern Android Kripto Para Takip Uygulaması',
+            tech: 'Kotlin, Jetpack Compose, Clean Architecture',
+            href: 'cryptoradar.html',
+            external: false,
+            label: 'Detay →'
+          },
+          {
+            name: 'Jetpack Compose Task Manager: MVVM Mimarisi ve Firebase Entegrasyonu',
+            tech: 'Kotlin, Android, MVVM Architecture',
+            href: 'task-manager.html',
+            external: false,
+            label: 'Detay →'
           }
         ]
       },
@@ -48,11 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
         title: '⚛️ React Native',
         projects: [
           {
-            name: 'Alışveriş Asistanı',
-            tech: 'React Native, Zustand, REST API',
-            href: 'https://github.com/akgullberk',
-            external: true,
-            label: 'GitHub →'
+            name: 'UniVento: Üniversite Kulüp Etkinlik Yönetim Mobil Uygulaması',
+            tech: 'React Native, Firebase Authentication, Firebase Firestore',
+            href: 'univento-mobile.html',
+            external: false,
+            label: 'Detay →'
           }
         ]
       }
@@ -62,28 +62,21 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'React',
         projects: [
           {
-            name: 'Portfolio Website',
-            tech: 'React, Tailwind CSS',
-            href: 'https://github.com/akgullberk',
-            external: true,
-            label: 'GitHub →'
+            name: 'UniVento: Üniversite Etkinlik ve Kulüp Yönetim Platformu',
+            tech: 'React, Firebase Authentication,CSS',
+            href: 'univento-web.html',
+            external: false,
+            label: 'Detay →'
           },
-          {
-            name: 'Dashboard',
-            tech: 'React, Chart.js',
-            href: 'https://github.com/akgullberk',
-            external: true,
-            label: 'GitHub →'
-          }
         ]
       },
       {
         title: 'Angular',
         projects: [
           {
-            name: 'CRM Paneli',
-            tech: 'Angular, RxJS',
-            href: 'crm.html',
+            name: 'Digital Card Platform: Clean Architecture ile Modern Web Uygulaması',
+            tech: 'Angular 19, RxJS, Standalone Components',
+            href: 'digital-card-platform.html',
             external: false,
             label: 'Detay →'
           }
@@ -95,37 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'Spring Boot',
         projects: [
           {
-            name: 'REST API',
+            name: 'Fullstack Developer Case – Spring Boot Digital Card & Portfolio Backend',
             tech: 'Spring Boot, PostgreSQL',
-            href: 'restapi.html',
+            href: 'fullstack-developer-case.html',
             external: false,
             label: 'Detay →'
-          },
-          {
-            name: 'Raporlama Servisi',
-            tech: 'Spring Boot, JPA, Docker',
-            href: 'https://github.com/akgullberk',
-            external: true,
-            label: 'GitHub →'
-          }
-        ]
-      },
-      {
-        title: 'Node.js',
-        projects: [
-          {
-            name: 'Bildirim Sistemi',
-            tech: 'Node.js, Firebase Cloud Messaging',
-            href: 'https://github.com/akgullberk',
-            external: true,
-            label: 'GitHub →'
-          },
-          {
-            name: 'Gerçek Zamanlı Sohbet',
-            tech: 'Node.js, WebSocket',
-            href: 'https://github.com/akgullberk',
-            external: true,
-            label: 'GitHub →'
           }
         ]
       },
@@ -133,11 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'FastAPI',
         projects: [
           {
-            name: 'ML Servis Katmanı',
-            tech: 'FastAPI, Docker, Celery',
-            href: 'https://github.com/akgullberk',
-            external: true,
-            label: 'GitHub →'
+            name: 'UniVento FastAPI: Üniversite Kulüp ve Etkinlik Yönetim Sistemi',
+            tech: 'FastAPI, MongoDB, Google Gemini AI',
+            href: 'univento-fastapi.html',
+            external: false,
+            label: 'Detay →'
           }
         ]
       }
