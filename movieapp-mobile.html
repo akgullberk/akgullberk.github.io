@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MovieApp | Berk Akgül</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="detail-page" data-page="movieapp-mobile">
+  <div id="particles-js"></div>
+
+  <header class="navbar"></header>
+
+  <main class="section" style="padding-top:8rem">
+    <div class="container detail-wrap">
+      <div class="detail-hero">
+        <p class="detail-kicker">Proje Detayı</p>
+        <h1>MovieApp: Clean Architecture ile Modern Film ve TV Dizisi Uygulaması</h1>
+        <p class="detail-sub">Flutter · Dart · Clean Architecture · BLoC/Cubit · get_it · dio · dartz · shared_preferences · video_player · chewie · youtube_player_flutter · flutter_svg</p>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://github.com/akgullberk/movieapp" target="_blank"><span class="icon-box"><img src="github.png" alt="GitHub"></span>GitHub</a>
+      </div>
+      
+
+      <section class="detail-block">
+        <div class="detail-title">Kısa Özet</div>
+        <div class="detail-body">
+          Bu projede, Clean Architecture prensiplerine uygun bir mobil uygulama geliştirdim. Kullanıcıların film ve TV dizilerini keşfedebileceği, fragman izleyebileceği ve detaylı bilgilere erişebileceği bir platform oluşturdum. Projede, iş mantığını UI'dan tamamen ayırarak sürdürülebilir ve test edilebilir bir yapı kurdum. Feature-based modüler yapı sayesinde her özellik bağımsız geliştirilebilir ve bakımı kolay hale geldi.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Projenin Amacı</div>
+        <div class="detail-body">
+          Bu çalışmayı gerçekleştirirken temel hedefim, Clean Architecture'ın pratikte nasıl uygulanacağını göstermek ve gerçek dünya senaryolarında kullanılabilecek bir mimari yapı oluşturmaktı. Genellikle mobil uygulamalarda UI ve business logic birbirine karışır; ben ise bu projede Data, Domain ve Presentation katmanlarını net bir şekilde ayırarak, her katmanın kendi sorumluluğuna odaklanmasını sağladım.
+          <br><br>
+          Dartz kütüphanesinin Either yapısını kullanarak hata yönetimini functional programming yaklaşımıyla ele aldım. Böylece hem tip güvenliği sağladım hem de hata senaryolarını daha kontrollü yönetebildim. Ayrıca, get_it ile dependency injection kullanarak bağımlılıkları merkezi bir yerden yönettim ve test edilebilirliği artırdım. BLoC/Cubit pattern'i ile state management'ı reactive bir şekilde yöneterek, UI'ın her zaman doğru state'i yansıtmasını garanti altına aldım.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Mimari & Yapı</div>
+        <div class="detail-body">
+          Uygulama Clean Architecture prensiplerine uygun olarak üç ana katmana ayrıldı:
+          <br><br>
+          Data Katmanı: API servisleri (DioClient ile HTTP istekleri), JSON modelleri ve repository implementasyonları. Bu katmanda, backend'den gelen ham verileri parse edip domain katmanına uygun entity'lere dönüştüren mapper'lar bulunuyor. Authorization ve Logger interceptor'ları ile tüm network isteklerini merkezi bir yerden yönetiyorum.
+          <br><br>
+          Domain Katmanı: Entity'ler (saf Dart sınıfları), repository interface'leri ve UseCase'ler. Bu katman tamamen platform bağımsız ve hiçbir dış bağımlılık içermiyor. Her iş akışı için ayrı UseCase oluşturarak Single Responsibility Principle'a uygun hareket ettim. Abstract UseCase sınıfı ile tüm use case'lerin aynı kontratı takip etmesini sağladım.
+          <br><br>
+          Presentation Katmanı: UI bileşenleri, sayfalar ve BLoC/Cubit ile state yönetimi. Her feature kendi presentation katmanına sahip ve widget'lar modüler bir şekilde organize edildi. Generic Data Cubit ile tekrar eden state management mantığını ortak bir yapıya taşıdım.
+          <br><br>
+          Core: Uygulama genelinde kullanılan konfigürasyonlar (tema, renkler, network ayarları, API URL'leri), temel entity'ler ve helper sınıflar. Bu katman, tüm feature'ların ortak kullandığı altyapıyı sağlıyor.
+          <br><br>
+          Feature-based modüler yapı sayesinde auth, movie, tv, search, watch ve home gibi her özellik kendi klasöründe, kendi data-domain-presentation katmanlarıyla organize edildi. Bu sayede proje büyüdükçe yönetilebilirliği korudum ve her geliştirici farklı feature'lar üzerinde bağımsız çalışabildi.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Görseller / Ekran Görüntüleri</div>
+        <div class="detail-gallery">
+          <div class="gallery-image">
+            <img src="movieappanasayfa.png" alt="Ana Sayfa">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Ana Sayfa</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="movieappanasayfa2.png" alt="Ana Sayfa 2">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Ana Sayfa 2</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="movieappfilmdetay.png" alt="Film Detay">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Film Detay</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="movieappfilmdetay2.png" alt="Film Detay 2">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Film Detay 2</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="movieappdizidetay.png" alt="Dizi Detay">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Dizi Detay</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="movieappdizidetay2.png" alt="Dizi Detay 2">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Dizi Detay 2</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="movieappfilmarama.png" alt="Film Arama">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Film Arama</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="movieappdiziarama.png" alt="Dizi Arama">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Dizi Arama</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <span class="lightbox-close">&times;</span>
+      <img id="lightbox-img" src="" alt="">
+      <div class="lightbox-title" id="lightbox-title"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="particles-init.js"></script>
+  <script src="navbar.js"></script>
+  <script>
+    // Lightbox functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryImages = document.querySelectorAll('.gallery-image');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxTitle = document.getElementById('lightbox-title');
+      const lightboxClose = document.querySelector('.lightbox-close');
+
+      galleryImages.forEach(function(imageContainer) {
+        imageContainer.addEventListener('click', function() {
+          const img = this.querySelector('img');
+          const title = this.querySelector('.gallery-image-title');
+          
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightboxTitle.textContent = title ? title.textContent : img.alt;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Close lightbox
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      lightboxClose.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+          closeLightbox();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+

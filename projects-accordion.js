@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
         title: '🦋 Flutter',
         projects: [
           {
+            name: 'MovieApp: Clean Architecture ile Modern Film ve TV Dizisi Uygulaması',
+            tech: 'Flutter, Clean Architecture, Bloc',
+            href: 'movieapp-mobile.html',
+            external: false,
+            label: 'Detay →'
+          },
+          {
             name: 'Flutter Todo App: Clean Architecture ve Çoklu State Management Yapısı',
             tech: 'Flutter, Clean Architecture, State Management',
             href: 'flutter-todo-app.html',
