@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UniVento | Berk Akgül</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body class="detail-page" data-page="univento-mobile">
+  <div id="particles-js"></div>
+
+  <header class="navbar"></header>
+
+  <main class="section" style="padding-top:8rem">
+    <div class="container detail-wrap">
+      <div class="detail-hero">
+        <p class="detail-kicker">Proje Detayı</p>
+        <h1>UniVento: Üniversite Kulüp Etkinlik Yönetim Mobil Uygulaması</h1>
+        <p class="detail-sub">React Native · JavaScript · TypeScript · Firebase Authentication · Firebase Firestore · React Navigation · Context API · Axios · AsyncStorage</p>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://github.com/akgullberk/UniVentoMobile" target="_blank"><span class="icon-box"><img src="../assets/images/github.png" alt="GitHub"></span>GitHub</a>
+      </div>
+      
+
+      <section class="detail-block">
+        <div class="detail-title">Kısa Özet</div>
+        <div class="detail-body">
+          UniVento, üniversite kulüplerinin etkinliklerini yönetmek ve öğrencilerin bu etkinliklere katılımını kolaylaştırmak için geliştirdiğim cross-platform mobil uygulamadır. React Native ile iOS ve Android için tek kod tabanından geliştirildi. Firebase Authentication ile güvenli kimlik doğrulama, Context API ile durum yönetimi ve RESTful API entegrasyonu ile backend iletişimi sağlandı. Rol tabanlı erişim kontrolü (kullanıcı/kulüp başkanı) ile farklı kullanıcı rollerine özel özellikler sunuldu.
+          </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Projenin Amacı</div>
+        <div class="detail-body">
+          Üniversite kulüplerinin etkinlik yönetimini dijitalleştirmek ve öğrencilerin etkinliklere katılımını kolaylaştırmak. Kulüp başkanları etkinlik oluşturabilir, katılım ve üyelik başvurularını yönetebilir. Öğrenciler etkinlikleri keşfedebilir, detaylarını görüntüleyebilir ve katılım isteği gönderebilir. Context API ile global durum yönetimi, AsyncStorage ile yerel veri saklama ve React Navigation ile akıcı navigasyon sağlandı. Modüler yapı ile bakım ve genişletme kolaylaştırıldı.
+          </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Mimari & Yapı</div>
+        <div class="detail-body">
+          Uygulama, katmanlı mimari prensiplerine uygun olarak geliştirildi:
+          <br><br>
+          Context Layer (Durum Yönetimi): AuthContext ile global kimlik doğrulama durumu ve kullanıcı rolü yönetimi. Firebase Authentication entegrasyonu ve AsyncStorage ile kalıcı oturum yönetimi.
+          <br><br>
+          Service Layer (API Katmanı): Axios tabanlı servis modülü ile RESTful API çağrıları. Etkinlik, kulüp, katılım ve üyelik işlemleri için merkezi API yönetimi.
+          <br><br>
+          Presentation Layer (UI Katmanı): Screen-based navigasyon yapısı ile modüler ekran organizasyonu. React Navigation ile stack ve bottom tab navigasyon. Her ekran kendi stil ve mantık dosyalarına sahip.
+          <br><br>
+          Component Layer (Bileşen Katmanı): Yeniden kullanılabilir bileşenler (BottomBar) ve özel ekran bileşenleri. React Native Vector Icons ile tutarlı ikon kullanımı.
+          <br><br>
+          Data Persistence: AsyncStorage ile kullanıcı rolü ve oturum bilgilerinin yerel saklanması. Firebase Firestore ile cloud veri yönetimi.
+        </div>
+      </section>
+
+      <!--
+      <section class="detail-block">
+        <div class="detail-title">Görseller / Ekran Görüntüleri</div>
+        <div class="detail-gallery">
+          <div class="gallery-chip">Ana Sayfa</div>
+          <div class="gallery-chip">Ürün Detayı</div>
+          <div class="gallery-chip">Sepet</div>
+        </div>
+      </section>
+      -->
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../assets/js/particles-init.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+</body>
+</html>
+

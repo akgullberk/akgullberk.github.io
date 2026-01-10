@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
           {
             name: 'MovieApp: Clean Architecture ile Modern Film ve TV Dizisi Uygulaması',
             tech: 'Flutter, Clean Architecture, Bloc',
-            href: 'movieapp-mobile.html',
+            href: 'projects/movieapp-mobile.html',
             external: false,
             label: 'Detay →'
           },
           {
             name: 'Flutter Todo App: Clean Architecture ve Çoklu State Management Yapısı',
             tech: 'Flutter, Clean Architecture, State Management',
-            href: 'flutter-todo-app.html',
+            href: 'projects/flutter-todo-app.html',
             external: false,
             label: 'Detay →'
           },
@@ -31,21 +31,21 @@ document.addEventListener('DOMContentLoaded', () => {
           {
             name: 'USG Challenge Mobil Uygulama: Clean Architecture ile Türkiye Şehir Rehberi',
             tech: 'Kotlin, Jetpack Compose, Clean Architecture',
-            href: 'usg-challenge.html',
+            href: 'projects/usg-challenge.html',
             external: false,
             label: 'Detay →'
           },
           {
             name: 'CryptoRadar: Clean Architecture ile Modern Android Kripto Para Takip Uygulaması',
             tech: 'Kotlin, Jetpack Compose, Clean Architecture',
-            href: 'cryptoradar.html',
+            href: 'projects/cryptoradar.html',
             external: false,
             label: 'Detay →'
           },
           {
             name: 'Jetpack Compose Task Manager: MVVM Mimarisi ve Firebase Entegrasyonu',
             tech: 'Kotlin, Android, MVVM Architecture',
-            href: 'task-manager.html',
+            href: 'projects/task-manager.html',
             external: false,
             label: 'Detay →'
           }
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
           {
             name: 'UniVento: Üniversite Kulüp Etkinlik Yönetim Mobil Uygulaması',
             tech: 'React Native, Firebase Authentication, Firebase Firestore',
-            href: 'univento-mobile.html',
+            href: 'projects/univento-mobile.html',
             external: false,
             label: 'Detay →'
           }
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
           {
             name: 'UniVento: Üniversite Etkinlik ve Kulüp Yönetim Platformu',
             tech: 'React, Firebase Authentication,CSS',
-            href: 'univento-web.html',
+            href: 'projects/univento-web.html',
             external: false,
             label: 'Detay →'
           },
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
           {
             name: 'Digital Card Platform: Clean Architecture ile Modern Web Uygulaması',
             tech: 'Angular 19, RxJS, Standalone Components',
-            href: 'digital-card-platform.html',
+            href: 'projects/digital-card-platform.html',
             external: false,
             label: 'Detay →'
           }
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
           {
             name: 'Fullstack Developer Case – Spring Boot Digital Card & Portfolio Backend',
             tech: 'Spring Boot, PostgreSQL',
-            href: 'fullstack-developer-case.html',
+            href: 'projects/fullstack-developer-case.html',
             external: false,
             label: 'Detay →'
           }
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
           {
             name: 'UniVento FastAPI: Üniversite Kulüp ve Etkinlik Yönetim Sistemi',
             tech: 'FastAPI, MongoDB, Google Gemini AI',
-            href: 'univento-fastapi.html',
+            href: 'projects/univento-fastapi.html',
             external: false,
             label: 'Detay →'
           }

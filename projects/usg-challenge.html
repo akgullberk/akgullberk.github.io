@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>USG Challenge Mobil Uygulama | Berk Akgül</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body class="detail-page" data-page="usg-challenge">
+  <div id="particles-js"></div>
+
+  <header class="navbar"></header>
+
+  <main class="section" style="padding-top:8rem">
+    <div class="container detail-wrap">
+      <div class="detail-hero">
+        <p class="detail-kicker">Proje Detayı</p>
+        <h1>USG Challenge Mobil Uygulama: Clean Architecture ile Türkiye Şehir Rehberi</h1>
+        <p class="detail-sub">Kotlin · Jetpack Compose · Clean Architecture · MVVM · Koin · Ktor · Room · Google Maps API · Coroutines · Flow</p>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://github.com/akgullberk/USGChallengeMobilUygulama" target="_blank"><span class="icon-box"><img src="../assets/images/github.png" alt="GitHub"></span>GitHub</a>
+      </div>
+      
+
+      <section class="detail-block">
+        <div class="detail-title">Kısa Özet</div>
+        <div class="detail-body">
+          Bu projede, Clean Architecture prensiplerine uygun bir Android uygulaması geliştirdim. Türkiye'deki şehirleri ve konumları listeleyen, favorilere ekleyen ve haritada görüntüleyen, kullanıcı odaklı bir şehir rehberi uygulaması oluşturdum. Uygulama, feature-based organizasyon, MVVM deseni ve modern Android teknolojileriyle geliştirildi.</div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Projenin Amacı</div>
+        <div class="detail-body">
+          Hedef, Clean Architecture'ın iş kurallarına uygun ve sürdürülebilir bir Android uygulaması geliştirmekti. Business logic ile UI katmanlarını izole ettim. Feature-based yapıyla her özelliği bağımsız modüller olarak organize ettim. Böylece yeni özellikler eklemek ve bakım yapmak daha kolay oldu.
+          <br><br>
+          Koin ile bağımlılık yönetimi, Ktor ile ağ katmanı, Room ile yerel veritabanı yönetimi, Flow ile reaktif state yönetimi ve Jetpack Compose ile modern UI oluşturdum. Bu yapı sayesinde test edilebilir, bakımı kolay ve ölçeklenebilir bir mimari kurdum.
+          </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Mimari & Yapı</div>
+        <div class="detail-body">
+          Uygulama, Clean Architecture prensiplerine uygun olarak Data, Domain ve Presentation katmanlarına ayrıldı. Her feature (Splash, Home, Detail, Location Map, Favorites) kendi içinde bu üç katmanı barındırır.
+          <br><br>
+          Data Layer (Veri Katmanı):
+API entegrasyonları için Ktor client kullanımı
+Room veritabanı ile yerel favori yönetimi
+Repository implementasyonları ve DAO'lar
+Entity-to-Domain model mapper'ları
+          <br><br>
+          Domain Layer (Alan Katmanı):
+          Use case'ler (GetCitiesPageUseCase, GetLocationDetailUseCase, ToggleFavoriteUseCase, vb.)
+          Repository interface'leri (soyutlama katmanı)
+          Domain modelleri ve business logic
+          <br><br>
+          Presentation Layer (Sunum Katmanı):
+MVVM deseni ile ViewModel'ler
+Jetpack Compose ile UI bileşenleri
+Action-State pattern ile kullanıcı etkileşimleri
+Flow ile reaktif state yönetimi
+Navigation Manager ile merkezi navigasyon yönetimi</div>
+      </section>
+
+      <!--
+      <section class="detail-block">
+        <div class="detail-title">Görseller / Ekran Görüntüleri</div>
+        <div class="detail-gallery">
+          <div class="gallery-chip">Not Listesi</div>
+          <div class="gallery-chip">Not Ekleme</div>
+          <div class="gallery-chip">Not Düzenleme</div>
+        </div>
+      </section>
+      -->
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../assets/js/particles-init.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+</body>
+</html>
+

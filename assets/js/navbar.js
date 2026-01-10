@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const page = document.body.dataset.page || 'home';
 
   /** Ortak logo (her zaman ana sayfaya götürür) */
-  const logoHtml = '<a href="index.html" class="logo">Berk Akgül</a>';
+  const isProjectPage = ['film', 'cryptoradar', 'flutter-todo-app', 'fullstack-developer-case', 'crm', 'restapi', 'task-manager', 'univento-fastapi', 'univento-mobile', 'univento-web', 'usg-challenge', 'movieapp-mobile', 'digital-card-platform'].includes(page);
+  const logoHtml = `<a href="${isProjectPage ? '../index.html' : 'index.html'}" class="logo">Berk Akgül</a>`;
 
   /** Sayfaya göre link setleri */
   let links = '';
@@ -24,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     case 'film':
       links = [
-        { href: 'index.html', label: 'Ana Sayfa' },
-        { href: 'mobile.html', label: 'Mobil' }
+        { href: '../index.html', label: 'Ana Sayfa' },
+        { href: '../mobile.html', label: 'Mobil' }
       ]
         .map(link => `<a href="${link.href}">${link.label}</a>`)
         .join('');
@@ -38,7 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
       break;
 
     default:
-      links = `<a href="index.html">Ana Sayfa</a>`;
+      // Proje detay sayfaları için "../" ekle
+      const indexUrl = isProjectPage ? '../index.html' : 'index.html';
+      links = `<a href="${indexUrl}">Ana Sayfa</a>`;
   }
 
   navbar.innerHTML = `

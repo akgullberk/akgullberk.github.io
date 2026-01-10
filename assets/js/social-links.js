@@ -6,19 +6,19 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       href: 'https://github.com/akgullberk',
       label: 'GitHub',
-      icon: 'github.png',
+      icon: 'assets/images/github.png',
       alt: 'GitHub'
     },
     {
       href: 'https://www.linkedin.com/in/akgullberk/',
       label: 'LinkedIn',
-      icon: 'linkedin.png',
+      icon: 'assets/images/linkedin.png',
       alt: 'LinkedIn'
     },
     {
       href: 'https://medium.com/@akgullberk',
       label: 'Medium',
-      icon: 'medium.png',
+      icon: 'assets/images/medium.png',
       alt: 'Medium'
     }
   ];

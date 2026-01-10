@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UniVento FastAPI | Berk Akgül</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body class="detail-page" data-page="univento-fastapi">
+  <div id="particles-js"></div>
+
+  <header class="navbar"></header>
+
+  <main class="section" style="padding-top:8rem">
+    <div class="container detail-wrap">
+      <div class="detail-hero">
+        <p class="detail-kicker">Proje Detayı</p>
+        <h1>UniVento FastAPI: Üniversite Kulüp ve Etkinlik Yönetim Sistemi</h1>
+        <p class="detail-sub">FastAPI · Python · MongoDB · Motor Async Drive · Pydantic  · Google Gemini AI · aiofiles · CORS · RESTful API</p>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://github.com/akgullberk/UniVentoFastAPI" target="_blank"><span class="icon-box"><img src="../assets/images/github.png" alt="GitHub"></span>GitHub</a>
+      </div>
+      
+
+      <section class="detail-block">
+        <div class="detail-title">Kısa Özet</div>
+        <div class="detail-body">
+          Bu projede, üniversite kulüpleri ve etkinliklerini yönetmek için asenkron bir REST API geliştirdim. Sistem, kulüp oluşturma ve yönetimi, etkinlik planlama ve görsel yükleme, öğrencilerin etkinliklere katılım başvuruları, kulüp üyelik başvuruları ve bu başvuruların kulüp başkanları tarafından onaylanması gibi işlevleri kapsıyor. Ayrıca Google Gemini AI entegrasyonu ile chatbot desteği ekledim.
+           </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Projenin Amacı</div>
+        <div class="detail-body">
+          Temel hedefim, modern web uygulamalarında asenkron programlamanın gücünü ve MongoDB gibi NoSQL veritabanlarının esnekliğini göstermekti. FastAPI'nin otomatik dokümantasyon özelliği ve Pydantic ile tip güvenliği sayesinde, hem geliştirme hızını artırdım hem de kod kalitesini yükselttim.
+          <br><br>
+          Projede, iş mantığını route'lardan ayırarak modüler bir yapı kurdum. Her modül (clubs, events, participations, memberships) kendi sorumluluğuna odaklanıyor ve bu sayede sistemin bakımı ve genişletilmesi kolaylaşıyor. Ayrıca, dosya yükleme işlemlerini asenkron olarak gerçekleştirerek performansı optimize ettim ve hata durumlarında veri tutarlılığını korudum.
+          </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Mimari & Yapı</div>
+        <div class="detail-body">
+          Uygulama, katmanlı mimari prensiplerine uygun olarak organize edildi:
+          <br><br>
+          Routes (API Katmanı): FastAPI router'ları ile RESTful endpoint'ler tanımladım. Her route, ilgili model ve veritabanı işlemlerini yönetiyor. CORS middleware ile cross-origin istekleri destekleniyor.
+          <br><br>
+          Models (Veri Katmanı): Pydantic modelleri ile gelen verilerin validasyonunu ve serileştirmesini sağladım. EmailStr, HttpUrl gibi özel tiplerle veri bütünlüğünü garanti altına aldım.
+          <br><br>
+          Database (Veritabanı Katmanı): Motor async driver ile MongoDB bağlantısını yönettim. Koleksiyonlar için indeksler oluşturarak sorgu performansını optimize ettim. Startup event'i ile uygulama başlangıcında veritabanı yapılandırmasını otomatikleştirdim.
+          <br><br>
+          AI Integration: Google Gemini API entegrasyonu ile chatbot özelliği ekledim. Bu sayede kullanıcılar etkinlikler ve kulüpler hakkında sorular sorabiliyor.
+          <br><br>
+          Static Files: Etkinlik görsellerini /uploads dizininde saklayarak statik dosya servisi sağladım. Dosya yükleme sırasında format kontrolü ve benzersiz dosya adlandırma uyguladım.
+        </div>
+      </section>
+
+      <!--
+      <section class="detail-block">
+        <div class="detail-title">Görseller / Ekran Görüntüleri</div>
+        <div class="detail-gallery">
+          <div class="gallery-chip">API Dokümantasyonu</div>
+          <div class="gallery-chip">Task Queue Yönetimi</div>
+          <div class="gallery-chip">Docker Yapılandırması</div>
+        </div>
+      </section>
+      -->
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../assets/js/particles-init.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+</body>
+</html>
+
