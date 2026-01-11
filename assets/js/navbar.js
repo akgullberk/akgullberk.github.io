@@ -1,12 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Favicon'i dinamik olarak ekle
+  const page = document.body.dataset.page || 'home';
+  const isProjectPage = ['film', 'cryptoradar', 'flutter-todo-app', 'fullstack-developer-case', 'crm', 'restapi', 'task-manager', 'univento-fastapi', 'univento-mobile', 'univento-web', 'usg-challenge', 'movieapp-mobile', 'digital-card-platform'].includes(page);
+  const isNotesPage = ['flutter-notes'].includes(page);
+  const faviconPath = (isProjectPage || isNotesPage) ? '../favicon.svg' : 'favicon.svg';
+  
+  // Favicon link'i oluştur ve head'e ekle
+  const faviconLink = document.createElement('link');
+  faviconLink.rel = 'icon';
+  faviconLink.type = 'image/svg+xml';
+  faviconLink.href = faviconPath;
+  document.head.appendChild(faviconLink);
+
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
 
-  const page = document.body.dataset.page || 'home';
-
   /** Ortak logo (her zaman ana sayfaya götürür) */
-  const isProjectPage = ['film', 'cryptoradar', 'flutter-todo-app', 'fullstack-developer-case', 'crm', 'restapi', 'task-manager', 'univento-fastapi', 'univento-mobile', 'univento-web', 'usg-challenge', 'movieapp-mobile', 'digital-card-platform'].includes(page);
-  const isNotesPage = ['flutter-notes'].includes(page);
   const logoHtml = `<a href="${isProjectPage || isNotesPage ? '../index.html' : 'index.html'}" class="logo">Berk Akgül</a>`;
 
   /** Sayfaya göre link setleri */
