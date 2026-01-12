@@ -95,6 +95,13 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'Spring Boot',
         projects: [
           {
+            name: 'Gallerist: Spring Boot ile Geliştirilmiş Modern Oto Galeri Yönetim Sistemi ve Finansal Entegrasyon',
+            tech: 'Spring Boot, Spring Security, JWT, PostgreSQL, TCMB API',
+            href: 'projects/gallerist.html',
+            external: false,
+            label: 'Detay →'
+          },
+          {
             name: 'Fullstack Developer Case – Spring Boot Digital Card & Portfolio Backend',
             tech: 'Spring Boot, PostgreSQL',
             href: 'projects/fullstack-developer-case.html',

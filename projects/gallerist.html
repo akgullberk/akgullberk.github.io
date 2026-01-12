@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallerist | Berk Akgül</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body class="detail-page" data-page="gallerist">
+  <div id="particles-js"></div>
+
+  <header class="navbar"></header>
+
+  <main class="section" style="padding-top:8rem">
+    <div class="container detail-wrap">
+      <div class="detail-hero">
+        <p class="detail-kicker">Proje Detayı</p>
+        <h1>Gallerist: Spring Boot ile Geliştirilmiş Modern Oto Galeri Yönetim Sistemi ve Finansal Entegrasyon</h1>
+        <p class="detail-sub">Java · Spring Boot · Spring Security · Spring Data JPA · PostgreSQL · JWT · Maven · Lombok · TCMB API</p>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://github.com/akgullberk/SpringBootGaleriProjesi" target="_blank"><span class="icon-box"><img src="../assets/images/github.png" alt="GitHub"></span>GitHub</a>
+        <a href="https://medium.com/@akgullberk/spring-boot-ile-temiz-ve-sürdürülebilir-bir-mimari-kurmak-53babbdb1f42" target="_blank"><span class="icon-box"><img src="../assets/images/medium.png" alt="Medium"></span>Medium</a>
+      </div>
+      
+
+      <section class="detail-block">
+        <div class="detail-title">Kısa Özet</div>
+        <div class="detail-body">
+          Bu projede, bir otomobil galerisinin tüm operasyonel süreçlerini (araç stoğu, müşteri yönetimi, satış takibi) dijitalleştiren, güvenliği ve performansıyla öne çıkan kapsamlı bir backend sistemi geliştirdim.<br><br>
+          Sadece veri yönetimiyle sınırlı kalmayıp, Merkez Bankası (TCMB) API entegrasyonu ile döviz kurlarını anlık takip eden ve JWT tabanlı gelişmiş bir kimlik doğrulama mekanizmasına sahip olan modüler bir yapı kurdum.<br><br>
+          Sistem, araç ekleme/güncelleme, müşteri kayıtları, satış işlemleri ve finansal raporlama gibi kritik işlevleri güvenli ve performanslı bir şekilde yerine getiriyor.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Projenin Amacı</div>
+        <div class="detail-body">
+          Bu çalışmayı gerçekleştirirken temel hedefim, kurumsal ölçekte bir uygulamanın ihtiyaç duyduğu tüm katmanları (güvenlik, veri tutarlılığı, hata yönetimi ve dış servis entegrasyonu) profesyonel standartlarda bir araya getirmekti.<br><br>
+          Proje kapsamında, karmaşık veritabanı ilişkilerini (One-to-Many, Many-to-Many) Spring Data JPA ile optimize ederek yönettim. Özellikle araç satış süreçlerinde finansal doğruluğu sağlamak adına dış servis entegrasyonu yaparak projenin gerçek hayat senaryolarına uygunluğunu artırdım.<br><br>
+          Kullanıcıların güvenliğini en üst seviyede tutmak için stateless bir yapıda çalışan JWT ve Refresh Token mekanizmalarını implemente ettim. Bu sayede her istek bağımsız olarak doğrulanıyor ve oturum yönetimi sunucu tarafında herhangi bir state gerektirmiyor.<br><br>
+          TCMB API entegrasyonu ile araç satış işlemlerinde güncel döviz kurlarını kullanarak, TL, USD ve EUR gibi farklı para birimlerinde işlem yapabilme yeteneği kazandırdım.<br><br>
+          Proje boyunca clean code prensiplerine, SOLID prensiplerine ve katmanlı mimari yaklaşımına sadık kalarak, sürdürülebilir ve test edilebilir bir kod tabanı oluşturmaya özen gösterdim.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Mimari & Yapı</div>
+        <div class="detail-body">
+          Uygulama, sürdürülebilirliği ve test edilebilirliği artırmak adına katmanlı mimari (Layered Architecture) ve DTO (Data Transfer Object) tasarım kalıpları üzerine inşa edildi:
+          <br><br>
+          <strong>Presentation (Controller):</strong> RESTful API standartlarına uygun, RootEntity yapısıyla standardize edilmiş cevaplar dönen uç noktalar. Tüm HTTP istekleri bu katmanda karşılanıyor ve uygun service metodlarına yönlendiriliyor. Controller sınıfları minimum business logic içeriyor ve sadece request/response yönetimine odaklanıyor.
+          <br><br>
+          <strong>Service:</strong> Tüm iş mantığının (Business Logic) toplandığı, dış API çağrılarının ve validasyonların yönetildiği motor katman. Araç ekleme, müşteri kaydı, satış işlemi gibi tüm operasyonlar burada koordine ediliyor. TCMB API ile döviz kuru sorgulama, JWT token üretme ve validasyon işlemleri de bu katmanda gerçekleştiriliyor.
+          <br><br>
+          <strong>Data Access (Repository):</strong> Spring Data JPA ile veritabanı işlemlerinin soyutlandığı ve PostgreSQL ile haberleşen katman. Custom query'ler, native SQL sorguları ve JPA repository metodları burada tanımlanıyor. Entity ilişkileri (Car-Customer, Sale-Car gibi) bu katmanda yönetiliyor.
+          <br><br>
+          <strong>Security:</strong> Spring Security ve JWT ile korunan uç noktalar, yetkilendirme filtreleri ve güvenli kimlik doğrulama akışı. Her istek için JWT token kontrolü yapılıyor, geçersiz veya süresi dolmuş tokenlar reddediliyor. Refresh token mekanizması ile kullanıcılar tekrar giriş yapmadan yeni access token alabiliyorlar.
+          <br><br>
+          <strong>Exception Handling:</strong> Uygulama genelinde oluşabilecek tüm hataların merkezi bir noktadan yakalanıp anlamlı mesajlara dönüştürüldüğü Global Exception Handler yapısı. Business exception'lar, validation hataları ve sistem hataları ayrı ayrı ele alınıyor ve kullanıcıya uygun HTTP status kodlarıyla birlikte dönülüyor.
+          <br><br>
+          <strong>External Integration:</strong> TCMB API ile döviz kuru entegrasyonu, RestTemplate kullanılarak gerçekleştirildi. API'den gelen XML verileri parse ediliyor ve veritabanında cache'leniyor. Bu sayede her satış işleminde dış servise gitmeden güncel kurları kullanabiliyoruz.
+          <br><br>
+          <strong>Data Model:</strong> PostgreSQL üzerinde normalize edilmiş tablo yapısı. Car, Customer, Sale, User gibi entity'ler arası ilişkiler JPA annotations ile tanımlanmış. Cascade işlemler ve orphan removal stratejileri doğru bir şekilde yapılandırılmış.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../assets/js/particles-init.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+</body>
+</html>
+
