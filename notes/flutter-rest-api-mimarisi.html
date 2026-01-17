@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flutter REST API Mimarisi | Berk Akgül</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body class="detail-page" data-page="flutter-notes">
+  <div id="particles-js"></div>
+  <header class="navbar"></header>
+  <main class="section" style="padding-top:8rem">
+    <div class="container detail-wrap">
+      <div class="detail-hero">
+        <p class="detail-kicker">Flutter Notları</p>
+        <h1>🏗️ Flutter REST API Mimarisi: SOLID Prensipleri ve Temiz Kod ile API Yönetimi</h1>
+        <p class="detail-sub">SOLID Prensipleri · Clean Architecture · REST API Mimarisi · Dependency Injection</p>
+      </div>
+      <section class="detail-block">
+        <div class="detail-title">🎥 Video Ders: Flutter REST API Mimarisi</div>
+        <div class="detail-body">
+          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; margin-top: 1rem;">
+            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 12px;" src="https://www.youtube.com/embed/2vCIMZPRewQ" title="Flutter REST API Mimarisi" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <p style="margin-top: 1rem; color: var(--muted);">Flutter uygulamalarında REST API mimarisi, SOLID prensipleri, temiz kod yaklaşımları ve profesyonel API yönetimi hakkında detaylı video anlatım.</p>
+        </div>
+      </section>
+      <section class="detail-block">
+        <div class="detail-title">📄 PDF Notlar: Flutter REST Mimarisi Derin Dalış</div>
+        <div class="detail-body">
+          <p style="margin-bottom: 1rem;">Flutter'da REST API mimarisi, SOLID prensipleri ve temiz kod pratikleri ile ilgili detaylı PDF notlarım:</p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+            <a href="../assets/Flutter_REST_Mimarisi_Derin_Dalış.pdf" target="_blank" class="btn primary" style="display: inline-flex; align-items: center; gap: 0.5rem;"><span>📥</span>PDF'i İndir</a>
+            <button onclick="togglePdfViewer()" class="btn secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.35);"><span>👁️</span><span id="pdf-toggle-text">PDF'i Görüntüle</span></button>
+          </div>
+          <div id="pdf-viewer" style="display: none; margin-top: 1rem;">
+            <div style="border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 12px; overflow: hidden; background: rgba(15, 23, 42, 0.6);">
+              <iframe src="../assets/Flutter_REST_Mimarisi_Derin_Dalış.pdf" style="width: 100%; height: 800px; border: none;" title="Flutter REST Mimarisi Derin Dalış PDF"></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../assets/js/particles-init.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+  <script>function togglePdfViewer(){const v=document.getElementById('pdf-viewer'),t=document.getElementById('pdf-toggle-text');v.style.display==='none'?(v.style.display='block',t.textContent='PDF\'i Gizle'):(v.style.display='none',t.textContent='PDF\'i Görüntüle');}</script>
+</body>
+</html>
