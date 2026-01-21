@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flutter E-Ticaret Uygulaması | Berk Akgül</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body class="detail-page" data-page="flutter-ecommerce">
+  <div id="particles-js"></div>
+
+  <header class="navbar"></header>
+
+  <main class="section" style="padding-top:8rem">
+    <div class="container detail-wrap">
+      <div class="detail-hero">
+        <p class="detail-kicker">Proje Detayı</p>
+        <h1>🛒 Flutter E-Ticaret Uygulaması: Clean Architecture ile Ölçeklenebilir Mobil Çözüm</h1>
+        <p class="detail-sub">Flutter · Dart · Clean Architecture · BLoC/Cubit · Firebase Authentication · Firebase Firestore · Stripe · get_it · dartz · flutter_svg</p>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://github.com/akgullberk/Flutter-Ecommerce-App-Bloc-CleanArchitecture-Firebase" target="_blank"><span class="icon-box"><img src="../assets/images/github.png" alt="GitHub"></span>GitHub</a>
+        <a href="https://medium.com/@akgullberk/flutter-clean-architecture-ve-firebase-ile-%C3%B6l%C3%A7eklenebilir-e-ticaret-uygulamas%C4%B1-geli%C5%9Ftirme-157937e90001" target="_blank"><span class="icon-box"><img src="../assets/images/medium.png" alt="Medium"></span>Medium</a>
+      </div>
+      
+
+      <section class="detail-block">
+        <div class="detail-title">Kısa Özet</div>
+        <div class="detail-body">
+          Bu projede, modern mobil uygulama geliştirme standartlarına uygun, ölçeklenebilir bir E-Ticaret uygulaması geliştirdim. Kullanıcıların ürünleri kategorize edilmiş şekilde inceleyebileceği, favorilerine ekleyebileceği, sepet yönetimi yapabileceği ve güvenli ödeme adımlarını tamamlayabileceği uçtan uca bir alışveriş deneyimi sundum. Projede backend olarak Firebase ekosistemini (Auth, Firestore) kullanırken, bu yapıyı Clean Architecture prensipleriyle izole ederek "serverless" ama kurumsal mimariye uygun bir yapı kurdum.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Projenin Amacı</div>
+        <div class="detail-body">
+          Bu çalışmadaki temel motivasyonum, Firebase gibi güçlü bir BaaS (Backend as a Service) çözümünün, katı mimari kuralları olan Clean Architecture ile nasıl uyumlu hale getirilebileceğini kanıtlamaktı. Genellikle Firebase projelerinde veritabanı kodları UI içerisine sızar; ben ise bu projede Data ve Domain katmanlarını kesin çizgilerle ayırarak, veritabanı teknolojisi değişse bile iş mantığının etkilenmeyeceği esnek bir yapı oluşturdum.
+          <br><br>
+          BLoC pattern kullanarak state yönetimini tahmin edilebilir hale getirdim ve karmaşık sepet/sipariş senaryolarını "event-driven" bir yapıda kurguladım. Stripe entegrasyonu ile gerçek dünya ödeme senaryolarını simüle ettim. Ayrıca, Dependency Injection (get_it) ile bağımlılıkları yöneterek, uygulamanın her bir parçasının (Auth, Cart, Product) izole bir şekilde test edilebilir olmasını sağladım.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Mimari & Yapı</div>
+        <div class="detail-body">
+          Uygulama, sorumlulukların ayrılığı (Separation of Concerns) ilkesine sadık kalarak Feature-First Clean Architecture yapısında kurgulandı:
+          <br><br>
+          <strong>Data Katmanı:</strong> Firebase Firestore ve Authentication servisleriyle iletişim kuran RemoteDataSource implementasyonları burada yer alır. Bu katman, Firebase'den gelen Snapshot verilerini işleyip Model'lere dönüştürür ve Domain katmanına saf veriyi iletir. Hata yönetimi burada yakalanarak özel Failure sınıflarına map edilir.
+          <br><br>
+          <strong>Domain Katmanı:</strong> Uygulamanın beyni olan bu katman; Entity'ler (saf Dart objeleri), Repository Interface'leri ve iş kurallarını barındıran UseCase'lerden oluşur. Örneğin; "Sepete ürün ekleme" veya "Siparişi tamamlama" mantığı burada, hiçbir UI veya Firebase bağımlılığı olmadan saf Dart kodu ile yönetilir.
+          <br><br>
+          <strong>Presentation Katmanı:</strong> Kullanıcı etkileşiminin olduğu katmandır. Flutter BLoC kullanılarak UI ve Logic birbirinden ayrılmıştır. View'lar sadece state'i dinler ve ekrana çizer; logic işlemleri (örneğin bir butona basıldığında tetiklenen event'ler) BLoC sınıflarında işlenir.
+          <br><br>
+          <strong>Core:</strong> Proje genelinde kullanılan ortak yapıları barındırır. Failure sınıfları, UseCase base class'ları, Extension'lar ve uygulama teması gibi yapıtaşları burada bulunur.
+          <br><br>
+          <strong>Feature-Based Modüler Yapı:</strong> Proje; Auth, Product, Cart, Checkout ve Profile gibi özelliklere göre klasörlendi. Her özellik kendi içinde Data, Domain ve Presentation katmanlarına sahiptir. Bu sayede, örneğin "Sepet" modülünde yapılan bir değişiklik, "Ürün Listeleme" modülünü etkilemez ve kod tabanı büyüse dahi bakım maliyeti minimumda kalır.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Görseller / Ekran Görüntüleri</div>
+        <div class="detail-gallery">
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Login.png" alt="Giriş Ekranı">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Giriş Ekranı</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Login-Password.png" alt="Şifre Girişi">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Şifre Girişi</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Login-Password (1).png" alt="Hesap Oluştur">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Hesap Oluştur</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Password Reset.png" alt="Şifre Sıfırlama">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Şifre Sıfırlama</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Onboarding.png" alt="Kullanıcı Tercihleri">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Kullanıcı Tercihleri</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/HomePage.png" alt="Ana Sayfa">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Ana Sayfa</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Categories.png" alt="Kategoriler">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Kategoriler</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Categories (1).png" alt="Kategori Ürünleri">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Kategori Ürünleri</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Orders.png" alt="Siparişlerim">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Siparişlerim</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Track Order.png" alt="Sipariş Takibi">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Sipariş Takibi</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Search.png" alt="Arama">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Arama</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Search Result.png" alt="Arama Sonuçları">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Arama Sonuçları</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Product Page.png" alt="Ürün Detayı">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Ürün Detayı</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Product Page (1).png" alt="Renk Seçimi">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Renk Seçimi</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Product Page (2).png" alt="Beden Seçimi">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Beden Seçimi</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Cart.png" alt="Sepetim">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Sepetim</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Checkout.png" alt="Ödeme Sayfası">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Ödeme Sayfası</div>
+            </div>
+          </div>
+          <div class="gallery-image">
+            <img src="../assets/images/ecommerce/Wishlist detail.png" alt="Favorilerim">
+            <div class="gallery-image-overlay">
+              <div class="gallery-image-title">Favorilerim</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <span class="lightbox-close">&times;</span>
+      <img id="lightbox-img" src="" alt="">
+      <div class="lightbox-title" id="lightbox-title"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../assets/js/particles-init.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+  <script>
+    // Lightbox functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryImages = document.querySelectorAll('.gallery-image');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxTitle = document.getElementById('lightbox-title');
+      const lightboxClose = document.querySelector('.lightbox-close');
+
+      galleryImages.forEach(function(imageContainer) {
+        imageContainer.addEventListener('click', function() {
+          const img = this.querySelector('img');
+          const title = this.querySelector('.gallery-image-title');
+          
+          lightboxImg.src = img.src;
+          lightboxImg.alt = img.alt;
+          lightboxTitle.textContent = title ? title.textContent : img.alt;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Close lightbox
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      lightboxClose.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+          closeLightbox();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

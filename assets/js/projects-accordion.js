@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
         title: '🦋 Flutter',
         projects: [
           {
+            name: 'Flutter E-Ticaret Uygulaması: Clean Architecture ile Ölçeklenebilir Mobil Çözüm',
+            tech: 'Flutter, Clean Architecture, BLoC/Cubit, Firebase, Stripe',
+            href: 'projects/flutter-ecommerce.html',
+            external: false,
+            label: 'Detay →'
+          },
+          {
             name: 'MovieApp: Clean Architecture ile Modern Film ve TV Dizisi Uygulaması',
             tech: 'Flutter, Clean Architecture, Bloc',
             href: 'projects/movieapp-mobile.html',
