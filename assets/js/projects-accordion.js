@@ -76,6 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
         title: 'React',
         projects: [
           {
+            name: 'Fitness App Frontend: React ile Modern Fitness Takip Uygulaması',
+            tech: 'React, Redux Toolkit, Material-UI, Keycloak OAuth2 PKCE, React Router, Axios, Vite',
+            href: 'projects/fitness-app-frontend.html',
+            external: false,
+            label: 'Detay →'
+          },
+          {
             name: 'UniVento: Üniversite Etkinlik ve Kulüp Yönetim Platformu',
             tech: 'React, Firebase Authentication,CSS',
             href: 'projects/univento-web.html',
@@ -101,6 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         title: 'Spring Boot',
         projects: [
+          {
+            name: 'Spring Boot Gemini AI Microservice Project: Eureka, Gateway, Keycloak, RabbitMQ',
+            tech: 'Spring Boot, Spring Cloud Gateway, Eureka, Keycloak, RabbitMQ, Google Gemini AI, MongoDB, PostgreSQL',
+            href: 'projects/spring-boot-gemini-ai-microservice.html',
+            external: false,
+            label: 'Detay →'
+          },
           {
             name: 'Gallerist: Spring Boot ile Geliştirilmiş Modern Oto Galeri Yönetim Sistemi ve Finansal Entegrasyon',
             tech: 'Spring Boot, Spring Security, JWT, PostgreSQL, TCMB API',

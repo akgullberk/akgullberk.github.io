@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spring Boot Gemini AI Microservice Project | Berk Akgül</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body class="detail-page" data-page="spring-boot-gemini-ai-microservice">
+  <div id="particles-js"></div>
+
+  <header class="navbar"></header>
+
+  <main class="section" style="padding-top:8rem">
+    <div class="container detail-wrap">
+      <div class="detail-hero">
+        <p class="detail-kicker">Proje Detayı</p>
+        <h1>Spring Boot Gemini AI Microservice Project: Eureka, Gateway, Keycloak, RabbitMQ</h1>
+        <p class="detail-sub">Spring Boot · Spring Cloud Gateway · Eureka Service Discovery · Keycloak · RabbitMQ · Google Gemini AI · MongoDB · PostgreSQL · Microservices Architecture</p>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://github.com/akgullberk/Spring-Boot-GeminiAI-Microservice-Project-Eureka-Gateway-Keycloak-RabbitMQ-React" target="_blank"><span class="icon-box"><img src="../assets/images/github.png" alt="GitHub"></span>GitHub</a>
+        <a href="https://medium.com/@akgullberk/spring-boot-gemini-api-keycloak-api-gateway-ve-rabbitmq-ile-microservice-mimarisi-458601543690" target="_blank"><span class="icon-box"><img src="../assets/images/medium.png" alt="Medium"></span>Medium</a>
+        <a href="fitness-app-frontend.html"><span class="icon-box">🌐</span>Frontend</a>
+      </div>
+      
+
+      <section class="detail-block">
+        <div class="detail-title">Kısa Özet</div>
+        <div class="detail-body">
+          Bu projede, fitness aktivitelerini takip eden ve AI destekli kişiselleştirilmiş öneriler sunan, mikroservis mimarisine dayalı bir backend sistemi geliştirdim.
+          Sadece aktivite kaydıyla sınırlı kalmayıp, Google Gemini AI entegrasyonu ile akıllı öneriler üreten ve Keycloak tabanlı merkezi kimlik doğrulama mekanizmasına sahip modüler bir yapı kurdum.
+          Sistem, aktivite takibi, kullanıcı yönetimi, AI destekli öneriler ve servisler arası asenkron iletişim gibi işlevleri güvenli ve ölçeklenebilir şekilde yerine getiriyor.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Projenin Amacı</div>
+        <div class="detail-body">
+          Temel hedef, kurumsal ölçekte bir mikroservis mimarisinin gerektirdiği tüm katmanları (güvenlik, servis keşfi, konfigürasyon yönetimi, asenkron mesajlaşma ve AI entegrasyonu) profesyonel standartlarda bir araya getirmekti.
+          <br><br>
+          Proje kapsamında, mikroservisler arası iletişimi RabbitMQ ile asenkron hale getirdim. Aktivite kaydedildiğinde AI servisi otomatik olarak devreye giriyor ve kullanıcıya öneriler üretiyor. Bu sayede kullanıcı deneyimi bloke edilmeden arka planda AI işlemleri gerçekleştiriliyor.
+          <br><br>
+          Kullanıcıların güvenliğini sağlamak için Keycloak ile merkezi kimlik yönetimi ve OAuth2 JWT tabanlı yetkilendirme uyguladım. Gateway katmanında her istek JWT token ile doğrulanıyor ve kullanıcı bilgileri otomatik olarak senkronize ediliyor.
+          <br><br>
+          Google Gemini AI entegrasyonu ile kullanıcı aktivitelerine göre kişiselleştirilmiş fitness önerileri üretiyorum. Her aktivite kaydından sonra AI servisi asenkron olarak çalışıyor ve önerileri MongoDB'de saklıyor.
+          <br><br>
+          Proje boyunca clean code prensiplerine, SOLID prensiplerine ve mikroservis mimarisi best practice'lerine sadık kalarak, sürdürülebilir ve ölçeklenebilir bir kod tabanı oluşturdum.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Mimari & Yapı</div>
+        <div class="detail-body">
+          Uygulama, mikroservis mimarisi prensiplerine uygun olarak geliştirildi:
+          <br><br>
+          <strong>API Gateway (Spring Cloud Gateway):</strong> Tüm dış isteklerin tek giriş noktası. Keycloak JWT token doğrulaması, CORS yapılandırması ve servis yönlendirmeleri burada yönetiliyor. KeycloakUserSyncFilter ile gelen JWT token'larından kullanıcı bilgileri çıkarılıyor ve User Service ile senkronize ediliyor.
+          <br><br>
+          <strong>Activity Service:</strong> Aktivite takip işlemlerinin yönetildiği servis. MongoDB ile aktivite kayıtlarını saklıyor. Her aktivite kaydından sonra RabbitMQ üzerinden AI Service'e mesaj gönderiyor. User Service ile senkronize çalışarak kullanıcı doğrulaması yapıyor.
+          <br><br>
+          <strong>AI Service:</strong> Google Gemini AI entegrasyonu ile kişiselleştirilmiş öneriler üreten servis. RabbitMQ'dan gelen aktivite mesajlarını dinliyor, Gemini API'ye sorgu gönderiyor ve üretilen önerileri MongoDB'de saklıyor. Asenkron çalışarak ana akışı bloke etmiyor.
+          <br><br>
+          <strong>User Service:</strong> Kullanıcı kayıt ve profil yönetimi servisi. PostgreSQL ile kullanıcı bilgilerini saklıyor. Keycloak ile entegre çalışarak kullanıcı senkronizasyonunu sağlıyor.
+          <br><br>
+          <strong>Eureka Service Discovery:</strong> Tüm mikroservislerin birbirini bulmasını sağlayan servis kayıt ve keşif mekanizması. Servisler başladığında Eureka'ya kayıt oluyor ve diğer servisler bu kayıtları kullanarak iletişim kuruyor.
+          <br><br>
+          <strong>Config Server:</strong> Merkezi konfigürasyon yönetimi. Tüm servislerin yapılandırma dosyaları burada tutuluyor ve dinamik olarak güncellenebiliyor.
+          <br><br>
+          <strong>RabbitMQ:</strong> Mikroservisler arası asenkron mesajlaşma. Activity Service'ten gelen aktivite kayıtları RabbitMQ üzerinden AI Service'e iletilerek, kullanıcı deneyimi bloke edilmeden AI işlemleri gerçekleştiriliyor.
+          <br><br>
+          <strong>Security (Keycloak):</strong> Merkezi kimlik ve erişim yönetimi. OAuth2 JWT token tabanlı yetkilendirme ile tüm API endpoint'leri korunuyor. Gateway katmanında token doğrulaması yapılıyor.
+          <br><br>
+          <strong>Data Models:</strong> MongoDB ile aktivite ve öneri verileri, PostgreSQL ile kullanıcı verileri saklanıyor. Her servis kendi veritabanını yönetiyor (Database per Service pattern).
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../assets/js/particles-init.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+</body>
+</html>

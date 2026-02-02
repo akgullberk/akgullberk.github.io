@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness App Frontend | Berk Akgül</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body class="detail-page" data-page="fitness-app-frontend">
+  <div id="particles-js"></div>
+
+  <header class="navbar"></header>
+
+  <main class="section" style="padding-top:8rem">
+    <div class="container detail-wrap">
+      <div class="detail-hero">
+        <p class="detail-kicker">Proje Detayı</p>
+        <h1>Fitness App Frontend: React ile Modern Fitness Takip Uygulaması</h1>
+        <p class="detail-sub">React · Redux Toolkit · Material-UI · Keycloak OAuth2 PKCE · React Router · Axios · Vite</p>
+      </div>
+
+      <div class="contact-links">
+        <a href="https://github.com/akgullberk/Spring-Boot-GeminiAI-Microservice-Project-Eureka-Gateway-Keycloak-RabbitMQ-React/tree/main/fitness-app-frontend" target="_blank"><span class="icon-box"><img src="../assets/images/github.png" alt="GitHub"></span>GitHub</a>
+        <a href="spring-boot-gemini-ai-microservice.html"><span class="icon-box">⚙️</span>Backend</a>
+      </div>
+      
+
+      <section class="detail-block">
+        <div class="detail-title">Kısa Özet</div>
+        <div class="detail-body">
+          Bu projede, fitness aktivitelerini görselleştiren ve yöneten, modern React teknolojileriyle geliştirilmiş bir frontend uygulaması geliştirdim.
+          Sadece basit bir liste görünümüyle sınırlı kalmayıp, Keycloak ile güvenli kimlik doğrulama, Redux ile merkezi state yönetimi ve Material-UI ile modern bir kullanıcı arayüzü sunan kapsamlı bir yapı kurdum.
+          Uygulama, aktivite ekleme, listeleme, detay görüntüleme ve AI destekli önerileri görüntüleme gibi işlevleri kullanıcı dostu bir şekilde yerine getiriyor.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Projenin Amacı</div>
+        <div class="detail-body">
+          Temel hedef, mikroservis mimarisine uygun, güvenli ve kullanıcı dostu bir frontend uygulaması geliştirmekti.
+          <br><br>
+          Proje kapsamında, Keycloak ile OAuth2 PKCE akışını entegre ederek güvenli kimlik doğrulama sağladım. Kullanıcılar Keycloak üzerinden giriş yapıyor ve JWT token'ları otomatik olarak yönetiliyor.
+          <br><br>
+          Redux Toolkit ile merkezi state yönetimi kurarak, kullanıcı kimlik bilgileri ve token'ları uygulama genelinde tutarlı bir şekilde yönetiyorum. LocalStorage ile token'lar kalıcı hale getiriliyor ve sayfa yenilemelerinde oturum korunuyor.
+          <br><br>
+          Material-UI ile modern ve responsive bir kullanıcı arayüzü tasarladım. Aktivite formları, liste görünümleri ve detay sayfaları tutarlı bir tasarım diliyle sunuluyor.
+          <br><br>
+          React Router ile client-side routing yaparak, kullanıcıların sayfa yenilemeden farklı sayfalar arasında gezinmesini sağladım. Protected route yapısı ile yetkisiz erişimler engelleniyor.
+          <br><br>
+          Axios interceptors ile her API isteğine otomatik olarak JWT token ve kullanıcı ID'si ekleniyor. Bu sayede her istekte manuel token yönetimi yapılmasına gerek kalmıyor.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Mimari & Yapı</div>
+        <div class="detail-body">
+          Uygulama, modern React best practice'lerine uygun olarak geliştirildi:
+          <br><br>
+          <strong>Authentication (OAuth2 PKCE):</strong> Keycloak ile güvenli kimlik doğrulama. react-oauth2-code-pkce kütüphanesi ile PKCE akışı implemente edildi. Kullanıcı giriş yaptığında JWT token alınıyor ve Redux store'a kaydediliyor.
+          <br><br>
+          <strong>State Management (Redux Toolkit):</strong> Merkezi state yönetimi. Auth slice ile kullanıcı bilgileri, token ve userId yönetiliyor. LocalStorage ile state kalıcı hale getiriliyor.
+          <br><br>
+          <strong>Routing (React Router):</strong> Client-side routing. Aktivite listesi, aktivite detayı ve ana sayfa route'ları tanımlandı. Protected route yapısı ile yetkisiz kullanıcılar login sayfasına yönlendiriliyor.
+          <br><br>
+          <strong>API Integration (Axios):</strong> Backend servisleriyle iletişim. Axios instance'ı ile base URL ve interceptor'lar yapılandırıldı. Her istekte Authorization header'ına JWT token ve X-User-ID header'ına kullanıcı ID'si otomatik ekleniyor.
+          <br><br>
+          <strong>UI Components (Material-UI):</strong> Modern ve tutarlı kullanıcı arayüzü. ActivityForm, ActivityList ve ActivityDetail component'leri Material-UI bileşenleriyle oluşturuldu. Responsive tasarım ile farklı ekran boyutlarına uyum sağlanıyor.
+          <br><br>
+          <strong>Component Structure:</strong> Modüler component yapısı. Her component kendi sorumluluğuna odaklanıyor. ActivityForm aktivite ekleme, ActivityList aktivite listeleme, ActivityDetail aktivite detayı ve AI önerilerini görüntüleme işlevlerini yerine getiriyor.
+          <br><br>
+          <strong>Error Handling:</strong> API hatalarının yakalanması ve kullanıcıya anlamlı mesajlar gösterilmesi. Try-catch blokları ile hata yönetimi yapılıyor.
+          <br><br>
+          <strong>Build & Development (Vite):</strong> Modern build tool. Vite ile hızlı development server ve optimize edilmiş production build. React 19 ve modern ES6+ özellikleri destekleniyor.
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../assets/js/particles-init.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+</body>
+</html>
