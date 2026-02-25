@@ -10,6 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
         title: '🦋 Flutter',
         projects: [
           {
+            name: 'Flutter Gerçek Zamanlı Mesajlaşma Uygulaması: Firebase Tabanlı Modern Chat Deneyimi',
+            tech: 'Flutter, Firebase Authentication, Cloud Firestore, Cubit, get_it',
+            href: 'projects/flutter-realtime-chat.html',
+            external: false,
+            label: 'Detay →'
+          },
+          {
             name: 'Flutter E-Ticaret Uygulaması: Clean Architecture ile Ölçeklenebilir Mobil Çözüm',
             tech: 'Flutter, Clean Architecture, BLoC/Cubit, Firebase, Stripe',
             href: 'projects/flutter-ecommerce.html',

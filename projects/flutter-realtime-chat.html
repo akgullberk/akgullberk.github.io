@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flutter Gerçek Zamanlı Mesajlaşma Uygulaması | Berk Akgül</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body class="detail-page" data-page="flutter-realtime-chat">
+  <div id="particles-js"></div>
+
+  <header class="navbar"></header>
+
+  <main class="section" style="padding-top:8rem">
+    <div class="container detail-wrap">
+      <div class="detail-hero">
+        <p class="detail-kicker">Proje Detayı</p>
+        <h1>💬 Flutter Gerçek Zamanlı Mesajlaşma Uygulaması: Firebase Tabanlı Modern Chat Deneyimi</h1>
+        <p class="detail-sub">Flutter · Dart · Firebase Authentication · Cloud Firestore · flutter_bloc (Cubit) · get_it · flutter_contacts · emoji_picker_flutter · intl · equatable</p>
+      </div>
+
+      <div class="contact-links">
+        <!-- İleride GitHub/Medium linkleri eklenebilir -->
+      </div>
+      
+
+      <section class="detail-block">
+        <div class="detail-title">Kısa Özet</div>
+        <div class="detail-body">
+          Bu projede, kullanıcıların rehberlerindeki kayıtlı kişilerle gerçek zamanlı sohbet edebildiği, çevrimiçi/çevrimdışı durumlarını görebildiği ve modern mesajlaşma deneyimi sunan bir Messenger uygulaması geliştirdim.
+          Uygulama; e‑posta ile kayıt/giriş, rehber senkronizasyonu, son mesaj özetli sohbet listesi, anlık mesaj akışı, yazıyor bilgisi, okundu bilgisi ve kullanıcı engelleme gibi temel chat özelliklerini uçtan uca sağlar.
+          <br><br>
+          Backend tarafında Firebase Auth ve Cloud Firestore kullanılırken, bu yapıyı repository ve Cubit katmanlarıyla soyutlayarak, hem okunabilir hem de genişlemeye açık bir mimari kurdum.
+          UI tarafında, Material 3 tabanlı modern bir tema, özelleştirilmiş form bileşenleri (CustomTextField, CustomButton) ve mesaj balonları ile sade ama işlevsel bir arayüz tasarladım.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Projenin Amacı</div>
+        <div class="detail-body">
+          Bu çalışmadaki temel hedefim, gerçek dünyadaki bir chat uygulamasının temel fonksiyonlarını, Firebase gibi bir BaaS üzerinde, test edilebilir ve yönetilebilir bir yapı kurarak hayata geçirmekti.
+          <br><br>
+          Çoğu örnek chat uygulamasında Firestore sorguları doğrudan widget’ların içine yazılırken, bu projede veri erişimini AuthRepository, ChatRepository ve ContactRepository üzerinden soyutlayarak, UI katmanını mümkün olduğunca stateless ve veri kaynağından bağımsız tutmaya odaklandım.
+          <br><br>
+          Ayrıca, flutter_contacts ile cihaz rehberini okuyup, Firestore’daki kullanıcılarla eşleştirerek gerçekçi bir “rehberden sohbet başlatma” senaryosu oluşturdum.
+          ChatCubit ile mesaj akışı, yazıyor durumu, çevrimiçi/son görülme ve engelleme gibi chat’e özgü karmaşık durumları tek bir merkezden, tahmin edilebilir state geçişleriyle yönettim.
+          AppLifeCycleObserver yardımıyla, uygulamanın yaşam döngüsüne göre kullanıcının isOnline ve lastSeen bilgilerini güncelleyerek, gerçek uygulamalardaki “online/last seen” davranışını taklit etmeyi hedefledim.
+        </div>
+      </section>
+
+      <section class="detail-block">
+        <div class="detail-title">Mimari & Yapı</div>
+        <div class="detail-body">
+          Uygulama, sorumlulukların ayrılığı ilkesine uygun şekilde katmanlara bölünmüş, Flutter dünyasında pratik bir yaklaşım olan repository + Cubit + presentation yapısı ile kurgulanmıştır:
+          <br><br>
+          <strong>Data Katmanı (lib/data)</strong>
+          <br>
+          <em>models:</em> UserModel, ChatRoomModel, ChatMessage gibi Firestore dokümanlarını temsil eden modeller, hem fromFirestore hem de toMap yapılarıyla iki yönlü veri dönüşümü sağlar.
+          <br>
+          <em>repositories:</em>
+          AuthRepository: Firebase Authentication ile kayıt/giriş/çıkış ve kullanıcı verisinin Firestore’da tutulmasını yönetir.
+          ChatRepository: Sohbet odası oluşturma, mesaj gönderme, mesajları stream ile dinleme, okundu bilgisini güncelleme, online/typing durumlarını ve engelleme/engeli kaldırma işlemlerini kapsar.
+          ContactRepository: flutter_contacts üzerinden cihaz rehberini okuyup, Firestore’daki kullanıcılarla telefon numarasına göre eşleştirerek sadece kayıtlı kullanıcıları listeleyen bir yapı sunar.
+          <br>
+          <em>services:</em>
+          service_locator.dart: get_it ile FirebaseAuth, FirebaseFirestore, repository’ler, Cubit’ler ve AppRouter için merkezi bağımlılık yönetimini sağlar; aynı zamanda Firebase.initializeApp çağrısının yapıldığı noktadır.
+          <br><br>
+          <strong>Logic Katmanı (lib/logic)</strong>
+          <br>
+          <em>Cubits:</em>
+          AuthCubit: Auth durumunu (authenticated, unauthenticated, loading, error) yönetir ve oturum açma/kapatma, kayıt olma akışlarını tek bir yerden kontrol eder.
+          ChatCubit: Sohbet odasına giriş (enterChat), mesaj gönderme, daha fazla mesaj yükleme, yazıyor durumu, online/last seen takibi ve engelleme durumunu yöneten merkezi state yöneticisidir.
+          <br>
+          <em>State Sınıfları:</em>
+          AuthState, ChatState yapıları equatable ile karşılaştırılabilir hale getirilmiştir, böylece widget’lar sadece gerçekten değişen alanlar için yeniden çizilir.
+          <br>
+          <em>Observer:</em>
+          AppLifeCycleObserver: Uygulama ön/arka plana geçtiğinde, kullanıcının çevrimiçi durumunu Firestore üzerinde güncelleyerek gerçekçi bir online/last seen deneyimi sağlar.
+          <br><br>
+          <strong>Presentation Katmanı (lib/presentation)</strong>
+          <br>
+          <em>Screens:</em>
+          LoginScreen ve SignupScreen: Form validasyonu, hata gösterimi ve AuthCubit ile entegre oturum akışını sağlayan giriş/kayıt ekranları.
+          HomeScreen: Kullanıcının tüm sohbet odalarını, son mesaj ve okunmamış mesaj sayısıyla birlikte listeleyen ana ekran; aynı zamanda rehberden yeni sohbet başlatmak için alt modal açar.
+          ChatMessageScreen: Gerçek zamanlı mesaj akışı, mesaj balonları, emoji picker, yazıyor bilgisi, online/last seen etiketi ve engelle/engeli kaldır aksiyonlarını barındıran detay sohbet ekranı.
+          <br>
+          <em>Widgets:</em>
+          ChatListTile, MessageBubble, LoadingDots gibi tekrar kullanılabilir komponentler ile hem okunabilir hem de yeniden kullanılabilir bir UI katmanı oluşturulmuştur.
+          <br><br>
+          <strong>Diğer Katmanlar</strong>
+          <br>
+          <em>config:</em> AppTheme ile Material 3 tabanlı tema, renk paleti, input stilleri ve buton stilleri tek merkezden yönetilir.
+          <br>
+          <em>core:</em> CustomButton, CustomTextField, UiUtils.showSnackBar gibi uygulama genelinde kullanılan yardımcı bileşen ve util’ler yer alır.
+          <br>
+          <em>router:</em> AppRouter, navigatorKey ile global navigasyonu yönetir; Cubit dinleyicilerinden bile sayfa geçişleri yapılmasını mümkün kılar.
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../assets/js/particles-init.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+</body>
+</html>
+
